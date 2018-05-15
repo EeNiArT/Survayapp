@@ -1,0 +1,81 @@
+﻿@model Quizbee.ViewModels.AttemptQuizViewModel
+
+@if (Model != null && Model.Question != null)
+{
+
+	<form role="form" id="answerForm" method="post">
+		<div class="form-group">
+			<h1>@Model.Question.Title</h1>
+			<hr />
+		</div>
+
+		<div class="form-group">
+			@foreach (var option in Model.Options)
+			{
+				<div class="radio radio-success">
+					<input type="radio" name="SelectedOptionID" value="@option.ID">
+					<label for="SelectedOptionID">
+						@option.Answer
+					</label>
+				</div>
+			}
+		</div>
+
+		<div id="actionsRow">
+			<hr />
+			<button type="button" id="submitButton" class="btn btn-info waves-effect waves-light w-md"><i class="fas fa-check mg-r-10"></i>&nbsp;Submit Answer</button>
+		</div>
+	</form>
+
+	<script>
+    $(document).ready(function() {
+		$("#submitButton").click(function () {
+			var SelectedOption = $("input[name='SelectedOptionID']:checked").val();
+
+			if (SelectedOption)
+			{
+				SubmitAnswer();
+			}
+			else
+			{
+				swal({
+					title: 'Select an Option',
+					type: 'warning',
+					confirmButtonColor: '#4fa7f3'
+				});
+			}
+        });
+    });
+
+    function SubmitAnswer() {
+        $.ajax({
+                type: "POST",
+                async: false,
+                url: '@Url.AnswerQuestion(Model.QuizID)',
+                data: {
+                    StudentQuizID: '@Model.StudentQuizID',
+                    QuizID: '@Model.QuizID',
+                    QuestionID: '@Model.Question.ID',
+                    QuestionIndex: '@Model.QuestionIndex',
+                    SelectedOptionID: $("input[name='SelectedOptionID']:checked").val(),
+                    TimerExpired: $("#TimerExpired").val()
+                }
+            })
+            .done(function(data) {
+
+                $('#contenter').toggle('slide', {
+                    direction: 'left'
+                }, 250, function() {
+                    $("#contenter").html(data);
+                    $('#contenter').toggle('slide', {
+                        direction: 'right'
+                    }, 250);
+                });
+            })
+            .fail(function(XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            });
+    }
+	</script>
+
+}

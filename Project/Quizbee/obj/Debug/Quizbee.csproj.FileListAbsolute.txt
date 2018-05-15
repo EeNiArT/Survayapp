@@ -1,0 +1,392 @@
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.csprojResolveAssemblyReference.cache
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.csproj.CoreCompileInputs.cache
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\ApplicationInsights.config
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\csc.exe
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\csc.exe.config
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\csc.rsp
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\csi.exe
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\csi.exe.config
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\csi.rsp
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.AppContext.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Console.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.IO.Compression.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.IO.Pipes.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Security.Claims.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Threading.Thread.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.ValueTuple.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Xml.XPath.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\vbc.exe
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\vbc.exe.config
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\vbc.rsp
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\VBCSCompiler.exe
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Quizbee.dll.config
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Quizbee.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Quizbee.pdb
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Antlr3.Runtime.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\EntityFramework.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\EntityFramework.SqlServer.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.Web.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.ApplicationInsights.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Newtonsoft.Json.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Owin.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.Helpers.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.Mvc.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.Optimization.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.Razor.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.WebPages.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.WebPages.Razor.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\WebGrease.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.Helpers.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.Mvc.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.Optimization.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.Razor.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.WebPages.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\System.Web.WebPages.Razor.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Antlr3.Runtime.pdb
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Newtonsoft.Json.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\EntityFramework.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\EntityFramework.SqlServer.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.ApplicationInsights.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\bin\Microsoft.AI.Web.xml
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.dll
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.pdb
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.Initialized.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.csproj.GenerateResource.Cache
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.ModifiedOnFieldAdded.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.questionQuizID.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.addedQuestionID.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.addedQuestionToOption.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.StudentQuizzes.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.attemptedTimes.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.StudentIDString.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.photoAdded.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.correctOptionRemovedFromQuestion.resources
+C:\Users\cdrgu\Documents\Visual Studio 2017\Projects\Quizbee\Quizbee\obj\Debug\Quizbee.Migrations.isActivecheck.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\ApplicationInsights.config
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\csc.exe
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\csc.exe.config
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\csc.rsp
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\csi.exe
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\csi.exe.config
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\csi.rsp
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.AppContext.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Console.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.IO.Compression.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.IO.Pipes.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Security.Claims.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Threading.Thread.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.ValueTuple.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Xml.XPath.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\vbc.exe
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\vbc.exe.config
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\vbc.rsp
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\VBCSCompiler.exe
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Quizbee.dll.config
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Quizbee.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Quizbee.pdb
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Antlr3.Runtime.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\EntityFramework.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\EntityFramework.SqlServer.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.Web.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.ApplicationInsights.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Newtonsoft.Json.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Owin.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.Helpers.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.Mvc.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.Optimization.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.Razor.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.WebPages.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.WebPages.Razor.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\WebGrease.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.Helpers.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.Mvc.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.Optimization.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.Razor.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.WebPages.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\System.Web.WebPages.Razor.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Antlr3.Runtime.pdb
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Newtonsoft.Json.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\EntityFramework.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\EntityFramework.SqlServer.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.ApplicationInsights.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\bin\Microsoft.AI.Web.xml
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.csprojResolveAssemblyReference.cache
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.Initialized.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.ModifiedOnFieldAdded.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.questionQuizID.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.addedQuestionID.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.addedQuestionToOption.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.StudentQuizzes.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.attemptedTimes.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.StudentIDString.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.photoAdded.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.correctOptionRemovedFromQuestion.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.Migrations.isActivecheck.resources
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.csproj.GenerateResource.Cache
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.csproj.CoreCompileInputs.cache
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.dll
+C:\Users\cdrgu\Desktop\Quizbee 1.0-Admin\New\Quizbee\obj\Debug\Quizbee.pdb
+E:\work\Purchased\Project\Quizbee\bin\ApplicationInsights.config
+E:\work\Purchased\Project\Quizbee\bin\roslyn\csc.exe
+E:\work\Purchased\Project\Quizbee\bin\roslyn\csc.exe.config
+E:\work\Purchased\Project\Quizbee\bin\roslyn\csc.rsp
+E:\work\Purchased\Project\Quizbee\bin\roslyn\csi.exe
+E:\work\Purchased\Project\Quizbee\bin\roslyn\csi.exe.config
+E:\work\Purchased\Project\Quizbee\bin\roslyn\csi.rsp
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\work\Purchased\Project\Quizbee\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.AppContext.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Collections.Immutable.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Console.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Diagnostics.Process.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.IO.Compression.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.IO.FileSystem.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.IO.Pipes.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Reflection.Metadata.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Security.AccessControl.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Security.Claims.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Security.Principal.Windows.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Threading.Thread.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.ValueTuple.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Xml.XmlDocument.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Xml.XPath.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\work\Purchased\Project\Quizbee\bin\roslyn\vbc.exe
+E:\work\Purchased\Project\Quizbee\bin\roslyn\vbc.exe.config
+E:\work\Purchased\Project\Quizbee\bin\roslyn\vbc.rsp
+E:\work\Purchased\Project\Quizbee\bin\roslyn\VBCSCompiler.exe
+E:\work\Purchased\Project\Quizbee\bin\roslyn\VBCSCompiler.exe.config
+E:\work\Purchased\Project\Quizbee\bin\Quizbee.dll.config
+E:\work\Purchased\Project\Quizbee\bin\Quizbee.dll
+E:\work\Purchased\Project\Quizbee\bin\Quizbee.pdb
+E:\work\Purchased\Project\Quizbee\bin\Antlr3.Runtime.dll
+E:\work\Purchased\Project\Quizbee\bin\EntityFramework.dll
+E:\work\Purchased\Project\Quizbee\bin\EntityFramework.SqlServer.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.Agent.Intercept.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.DependencyCollector.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.Web.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.WindowsServer.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.ApplicationInsights.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AspNet.Identity.Core.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.Cookies.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.Facebook.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.Google.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.OAuth.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.Twitter.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Web.Infrastructure.dll
+E:\work\Purchased\Project\Quizbee\bin\Newtonsoft.Json.dll
+E:\work\Purchased\Project\Quizbee\bin\Owin.dll
+E:\work\Purchased\Project\Quizbee\bin\System.Web.Helpers.dll
+E:\work\Purchased\Project\Quizbee\bin\System.Web.Mvc.dll
+E:\work\Purchased\Project\Quizbee\bin\System.Web.Optimization.dll
+E:\work\Purchased\Project\Quizbee\bin\System.Web.Razor.dll
+E:\work\Purchased\Project\Quizbee\bin\System.Web.WebPages.Deployment.dll
+E:\work\Purchased\Project\Quizbee\bin\System.Web.WebPages.dll
+E:\work\Purchased\Project\Quizbee\bin\System.Web.WebPages.Razor.dll
+E:\work\Purchased\Project\Quizbee\bin\WebGrease.dll
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\work\Purchased\Project\Quizbee\bin\System.Web.Helpers.xml
+E:\work\Purchased\Project\Quizbee\bin\System.Web.Mvc.xml
+E:\work\Purchased\Project\Quizbee\bin\System.Web.Optimization.xml
+E:\work\Purchased\Project\Quizbee\bin\System.Web.Razor.xml
+E:\work\Purchased\Project\Quizbee\bin\System.Web.WebPages.xml
+E:\work\Purchased\Project\Quizbee\bin\System.Web.WebPages.Deployment.xml
+E:\work\Purchased\Project\Quizbee\bin\System.Web.WebPages.Razor.xml
+E:\work\Purchased\Project\Quizbee\bin\Antlr3.Runtime.pdb
+E:\work\Purchased\Project\Quizbee\bin\Newtonsoft.Json.xml
+E:\work\Purchased\Project\Quizbee\bin\EntityFramework.xml
+E:\work\Purchased\Project\Quizbee\bin\EntityFramework.SqlServer.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AspNet.Identity.Core.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.Facebook.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.Cookies.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.OAuth.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.Google.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.Twitter.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.ApplicationInsights.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.DependencyCollector.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.WindowsServer.xml
+E:\work\Purchased\Project\Quizbee\bin\Microsoft.AI.Web.xml
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.csprojResolveAssemblyReference.cache
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.Initialized.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.ModifiedOnFieldAdded.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.questionQuizID.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.addedQuestionID.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.addedQuestionToOption.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.StudentQuizzes.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.attemptedTimes.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.StudentIDString.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.photoAdded.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.correctOptionRemovedFromQuestion.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.Migrations.isActivecheck.resources
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.csproj.GenerateResource.Cache
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.dll
+E:\work\Purchased\Project\Quizbee\obj\Debug\Quizbee.pdb
