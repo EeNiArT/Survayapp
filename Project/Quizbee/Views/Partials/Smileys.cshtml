@@ -1,1 +1,164 @@
-﻿
+﻿@*<style>
+
+    form#smileys input[type="radio"] {
+      -webkit-appearance: none;
+      width: 90px;
+      height: 90px;
+      border: none;
+      cursor: pointer;
+      transition: border .2s ease;
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+      margin: 0 5px;
+      transition: all .2s ease;
+    }
+    form#smileys input[type="radio"]:hover, form#smileys input[type="radio"]:checked {
+      -webkit-filter: grayscale(0);
+              filter: grayscale(0);
+    }
+    form#smileys input[type="radio"]:focus {
+      outline: 0;
+    }
+    form#smileys input[type="radio"].happy {
+      background: url("https://res.cloudinary.com/turdlife/image/upload/v1492864443/happy_ampvnc.svg") center;
+      background-size: cover;
+    }
+    form#smileys input[type="radio"].neutral {
+      background: url("https://res.cloudinary.com/turdlife/image/upload/v1492864443/neutral_t3q8hz.svg") center;
+      background-size: cover;
+    }
+    form#smileys input[type="radio"].sad {
+      background: url("https://res.cloudinary.com/turdlife/image/upload/v1492864443/sad_bj1tuj.svg") center;
+      background-size: cover;
+    }
+
+    .mtt {
+      position: fixed;
+      bottom: 10px;
+      right: 20px;
+      color: #999;
+      text-decoration: none;
+    }
+    .mtt span {
+      color: #e74c3c;
+    }
+    .mtt:hover {
+      color: #666;
+    }
+    .mtt:hover span {
+      color: #c0392b;
+    }
+    </style>
+
+    <div id="smileys">
+        <input type="radio" name="smiley" value="sad" class="sad">
+        <input type="radio" name="smiley" value="neutral" class="neutral">
+        <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
+        <div>It looks like you're feeling <span id="result">value</span> today..</div>
+    </div>
+
+    <a class="mtt" href="https://morningtrain.dk" target="_blank">
+        With <span>♥</span> from Morning Train
+    </a>
+
+
+    <script>
+        $('#smileys input').on('click', function () {
+            $('#result').html($(this).val());
+        });
+    </script>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="element"></div>
+
+
+<script src="~/Content/js/Smily/emotion-ratings.js"></script>
+
+<script>
+    var emotionsArray = ['angry', 'disappointed', 'meh', 'happy', 'inlove'];
+    $("#element").emotionsRating({
+        emotionSize: 50,
+        bgEmotion: 'happy',
+        emotions: emotionsArray,
+        color: 'red'
+    });
+</script>
+
+
+@*<script>
+
+        debugger;
+
+
+
+
+
+        var emotionsArray = {
+
+            angry: "&#x1F620;",
+            disappointed: "&#x1F61E;",
+            meh: "&#x1F610;",
+            happy: "&#x1F60A;",
+            smile: "&#x1F603;",
+            wink: "&#x1F609;",
+            laughing: "&#x1F606;",
+            inLove: "&#x1F60D;",
+            heart: "&#x2764;",
+            crying: "&#x1F622;",
+            star: "&#x2B50;",
+        };
+
+
+
+        var emotions = ['angry', 'disappointed', 'meh', 'happy', 'inLove'];
+
+
+        $("#mysmiliesRating").emotionsRating({
+            emotions: emotionsArray
+        });
+
+
+        $("#mysmiliesRating").emotionsRating({
+
+            // background emoji
+            bgEmotion: "happy",
+
+            // emoji array
+            emotionsCollection: ['angry', 'disappointed', 'meh', 'happy', 'inLove'],
+            // number of emoji
+            count: 5,
+            // color of emoji
+            // gold, red, blue, green, black,
+            // brown, pink, purple, orange
+            color: "red",
+            // size of emoji
+            emotionSize: 30,
+
+            // input name
+            inputName: "rating",
+            // callback
+            //emotionOnUp<a href="https://www.jqueryscript.net/time-clock/">date</a>: null,
+            // initialize the rating number
+            initialRating: null
+        });
+
+
+    </script>*@
