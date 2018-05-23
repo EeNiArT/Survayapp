@@ -1,1 +1,59 @@
 ﻿
+    <style>
+       
+       
+        .rating {
+            /*width:100%;*/
+            margin-top: 10px;
+            border: none;
+            float: left;
+            
+        }
+
+
+            .rating > label {
+                color: #90A0A3;
+                float: right;
+            }
+
+                .rating > label:before {
+                    margin: 5px;
+                    font-size: 2em;
+                    font-family: FontAwesome;
+                    content: "\f005";
+                    display: inline-block;
+                }
+
+            .rating > input {
+                display: none;
+            }
+
+                .rating > input:checked ~ label,
+                .rating:not(:checked) > label:hover,
+                .rating:not(:checked) > label:hover ~ label {
+                    color: #F79426;
+                }
+
+                    .rating > input:checked + label:hover,
+                    .rating > input:checked ~ label:hover,
+                    .rating > label:hover input:checked label,
+                    .rating > input:checked label:hover label {
+                        color: #FECE31;
+                    }
+                    
+                    
+    </style>
+    <div class="row" style="width:100%">
+        <div class="rating">
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label class="star" for="star5" title="Awesome" aria-hidden="true"></label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label class="star" for="star4" title="Great" aria-hidden="true"></label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label class="star" for="star2" title="Good" aria-hidden="true"></label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label class="star" for="star1" title="Bad" aria-hidden="true"></label>
+        </div>
+    </div>
