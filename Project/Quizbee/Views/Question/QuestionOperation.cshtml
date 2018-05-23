@@ -4,7 +4,6 @@
 
 	var formAction = Model.ID > 0 ? Url.ModifyQuestion(Model.QuizID, Model.ID) : Url.AddQuestion(Model.QuizID);
 }
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12">
@@ -18,11 +17,11 @@
 							<a class="nav-link active" href="#">
 								@if (Model.ID > 0)
 								{
-									<i class="fas fa-save"></i>
+								<i class="fas fa-save"></i>
 								}
 								else
 								{
-									<i class="fas fa-plus"></i>
+								<i class="fas fa-plus"></i>
 								}
 								&nbsp;@Model.PageInfo.PageTitle
 							</a>
@@ -51,6 +50,39 @@
 							}
 						</div>
 						<div class="form-group">
+							<label for="Title">Answer Type</label>
+
+							<div class="row">
+								<div class="col-md-3">
+									<div class="radio">
+										<label><input type="radio" name="optradio">Option 1</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="radio">
+										<label><input type="radio" name="optradio">Option 2</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="radio">
+										<label><input type="radio" name="optradio">Option 3</label>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="radio">
+										<label><input type="radio" name="optradio">Option 4</label>
+									</div>
+								</div>              
+							</div>
+						</div>
+
+						<div class="form-group">
+							@Html.Partial("~/Views/Partials/Smileys.cshtml")
+						</div>
+                        <div class="form-group">
+                            @Html.Partial("~/Views/Partials/Starsratting.cshtml")
+                        </div>
+						<div class="form-group">
 							<label for="CorrectOption">Correct Option</label>
 							@{
 								var correctOptionValue = Model.CorrectOption != null ? Model.CorrectOption.Answer : "";
@@ -77,9 +109,7 @@
 								</div>
 							}
 						}
-
 						<span id="options"></span>
-
 						@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Options"] != null && ViewData.ModelState["Options"].Errors.Count > 0)
 						{
 							<div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
@@ -90,7 +120,6 @@
 								@Html.ValidationMessageFor(m => m.Options, "", new { @class = "tx-danger" })
 							</div>
 						}
-
 						<div id="actionsRow">
 							<hr />
 							<button type="button" id="addOptionButton" class="btn btn-info waves-effect waves-light w-md"><i class="fas fa-plus mg-r-10"></i>&nbsp;Add Option</button>
@@ -111,7 +140,6 @@
 		</div>
 	</div>
 </div>
-
 <div id="deleteModal" class="modal fade">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content tx-size-sm">
@@ -128,12 +156,10 @@
 		</div>
 	</div>
 </div>
-
 <div class="optionRowTemplate" style="display:none">
 	<label><span name="optionNoText"></span></label>
 	<input class="form-control" type="text" name="optionNo" placeholder="Enter Option">
 </div>
-
 <script>
 	$(document).ready(function () {
 		$("#addOptionButton").click(function () {
