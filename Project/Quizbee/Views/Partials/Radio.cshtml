@@ -1,0 +1,45 @@
+﻿<style>
+
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+
+
+    label {
+        cursor: pointer;
+    }
+
+    input:checked + label {
+        background: DarkOliveGreen;
+    }
+</style>
+
+<div class="form-group">
+    <label for="Title"><solid> Answer Type</solid></label>
+    <ul>
+        <li>
+
+            <label for='radio1'><input type='radio' value='1' name='radio' style="visibility: hidden" id='radio1' /><button class="btn btn-info">Smiley Choice</button></label>
+
+        </li>
+        <li>
+            <label for='radio2'><input type='radio' value='2' name='radio' style="visibility: hidden" id='radio2' /><button class="btn btn-info">Star Rating</button></label>
+        </li>
+        <li>
+            <label for='radio3'><input type='radio' value='3' name='radio' style="visibility: hidden" id='radio3' /><button class="btn btn-info">Open Question</button></label>
+        </li>
+        <li>
+            <label for='radio4'><input type='radio' value='4' name='radio' style="visibility: hidden" id='radio4' />
+            <button class="btn btn-info">Multiple Choice</button></label>
+        </li>
+    </ul>
+
+</div>
+
