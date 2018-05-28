@@ -211,6 +211,69 @@ namespace Quizbee.Helpers
             return routeURL.ToLower();
         }
 
+        public static string CreateSurvey(this UrlHelper helper)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SurveyOperation", new
+            {
+                controller = "Survey",
+                action = "SurveyOperation",
+                Operation = Operations.Create
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string ModifySurvey(this UrlHelper helper, int surveyID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SurveyOperation", new
+            {
+                controller = "Survey",
+                action = "SurveyOperation",
+                Operation = Operations.Modify,
+                ID = surveyID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string UpdateSurvey(this UrlHelper helper, int surveyID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SurveyOperation", new
+            {
+                controller = "Survey",
+                action = "SurveyOperation",
+                Operation = Operations.Update,
+                ID = surveyID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string DeleteSurvey(this UrlHelper helper, int surveyID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SurveyOperation", new
+            {
+                controller = "Survey",
+                action = "SurveyOperation",
+                Operation = Operations.Delete,
+                ID = surveyID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
         public static string QuestionsList(this UrlHelper helper, int quizID, string searchTerm = "", int? pageNo = 1, int? pageSize = 10)
         {
             string routeURL = string.Empty;

@@ -121,11 +121,16 @@ namespace Quizbee
 				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
 			);
 
-            routes.MapRoute(
-                name: "Survey",
-                url: "survey/",
-                defaults: new { controller = "Survey", action = "Index" }
-            );
-        }
+			routes.MapRoute(
+				name: "Survey",
+				url: "survey/",
+				defaults: new { controller = "Survey", action = "Index" }
+			);
+			routes.MapRoute(
+				name: "SurveyOperation",
+				url: "surveys/{Operation}/",
+				defaults: new { controller = "Survey", action = "SurveyOperation" }
+			);
+		}
 	}
 }
