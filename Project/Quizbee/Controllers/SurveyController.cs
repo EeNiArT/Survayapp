@@ -1,8 +1,10 @@
-﻿using Quizbee.Database;
+﻿using Quizbee.Commons;
+using Quizbee.Database;
 using Quizbee.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -63,6 +65,49 @@ namespace Quizbee.Controllers
             model.Pager = new Pager(model.TotalCount, model.pageNo, model.pageSize);
 
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> SurveyOperation(string Operation, int? ID)
+        {
+            QuizViewModel model = new QuizViewModel();
+
+            if (Operation == Operations.Create)
+            {
+                model.PageInfo = new PageInfo()
+                {
+                    PageTitle = "Create New Survey",
+                    PageDescription = "Create new survey."
+                };
+
+                return View(model);
+            }
+            else if (Operation == Operations.Modify)
+            {
+                if (!ID.HasValue) return HttpNotFound();
+
+                var quiz = await db.Quizzes.FindAsync(ID.Value);
+
+                if (quiz == null || !quiz.IsActive)
+                    return HttpNotFound();
+
+                model.PageInfo = new PageInfo()
+                {
+                    PageTitle = "Modify Survey",
+                    PageDescription = "Modify this survey."
+                };
+
+                model.ID = quiz.ID;
+                model.Name = quiz.Name;
+                model.Description = quiz.Description;
+                model.Hours = quiz.TimeDuration.Hours;
+                model.Minutes = quiz.TimeDuration.Minutes;
+
+                model.Questions = quiz.Questions.Where(q => q.IsActive).ToList();
+
+                return View(model);
+            }
+            else return HttpNotFound();
         }
     }
 }
