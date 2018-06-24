@@ -95,7 +95,7 @@
         },
         emotionStyle: function() {
             var styles = "."+this.styleCode+"{margin-right:3px;border-radius: 50%;cursor:pointer;opacity:0.3;display: inline-block;font-size:"
-                 + this.settings.emotionSize +"px; text-decoration:none;line-height:0.9;text-align: center;color:"+this.settings.color+"}";
+                 + this.settings.emotionSize +"px; text-decoration:none;line-height:1.9;text-align: center;color:"+this.settings.color+"}";
             $element.append("<style>" + styles + "</style>");
         },
         renderEmotion: function () {
