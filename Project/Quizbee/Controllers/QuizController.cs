@@ -173,7 +173,9 @@ namespace Quizbee.Controllers
 			else return HttpNotFound();			
 		}
 
-		private async Task<Quiz> CreateQuizAsync(QuizViewModel model)
+        #region Supporting method
+
+        private async Task<Quiz> CreateQuizAsync(QuizViewModel model)
 		{
 			Quiz quiz = new Quiz();
 
@@ -211,6 +213,9 @@ namespace Quizbee.Controllers
 			await db.SaveChangesAsync();
 
 			return quiz;
-		}		
-	}
+		}
+
+        #endregion
+
+    }
 }

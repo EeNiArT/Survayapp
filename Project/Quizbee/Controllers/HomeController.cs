@@ -23,8 +23,8 @@ namespace Quizbee.Controllers
 
 			model.PageInfo = new PageInfo()
 			{
-				PageTitle = "Quizbee",
-				PageDescription = "Quizbee helps you to create scalable and dynamic quizzes with any number of questions and related options. Creating and attempting Quizzes have never been this easy. Try it now!"
+				PageTitle = "Qwandryx",
+				PageDescription = "Qwandryx helps you to create scalable and dynamic survey and quizzes with any number of different types of questions and related options. Creating and attempting Quizz and surveys have never been this easy. Try it now!"
 			};
 
 			model.Quizzes = db.Quizzes
@@ -34,7 +34,22 @@ namespace Quizbee.Controllers
 									.Take(9)
 									.ToList();
 
-			return View(model);
-		}		
-	}
+            model.Surveys = db.Surveys
+                                    .Where(q => q.IsActive)
+                                    .Where(q => q.SQuestions.Count > 0)
+                                    .OrderByDescending(x => x.ModifiedOn)
+                                    .Take(9)
+                                    .ToList();
+
+            return View(model);
+		}
+
+        public ActionResult Welcome()
+        {
+            WelcomeViewModel model = new WelcomeViewModel();
+
+            
+            return View(model);
+        }
+    }
 }

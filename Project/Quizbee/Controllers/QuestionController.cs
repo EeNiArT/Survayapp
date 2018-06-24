@@ -11,340 +11,391 @@ using System.Web.Mvc;
 
 namespace Quizbee.Controllers
 {
-	[Authorize]
-	public class QuestionController : Controller
+    [Authorize]
+    public class QuestionController : Controller
     {
-		ApplicationDbContext db;
+        ApplicationDbContext db;
 
-		public QuestionController()
-		{
-			db = new ApplicationDbContext();
-		}
+        public QuestionController()
+        {
+            db = new ApplicationDbContext();
+        }
 
         public ActionResult Index(int quizID, string search, int? page, int? items)
         {
-			QuestionListingViewModel model = new QuestionListingViewModel();
+            QuestionListingViewModel model = new QuestionListingViewModel();
 
-			model.PageInfo = new PageInfo()
-			{
-				PageTitle = "Questions",
-				PageDescription = "List of Questions for Selected Quiz."
-			};
+            model.PageInfo = new PageInfo()
+            {
+                PageTitle = "Questions",
+                PageDescription = "List of Questions for Selected Quiz."
+            };
 
-			model.searchTerm = search;
-			model.pageNo = page ?? 1;
-			model.pageSize = items ?? 10;
+            model.searchTerm = search;
+            model.pageNo = page ?? 1;
+            model.pageSize = items ?? 10;
 
-			var quiz = db.Quizzes.Where(q => q.IsActive).FirstOrDefault(x => x.ID == quizID);
+            var quiz = db.Quizzes.Where(q => q.IsActive).FirstOrDefault(x => x.ID == quizID);
 
-			if (quiz != null)
-			{
-				model.QuizID = quizID;
+            if (quiz != null)
+            {
+                model.QuizID = quizID;
 
-				if (string.IsNullOrEmpty(model.searchTerm))
-				{
-					model.Questions = quiz.Questions
-										.Where(q=>q.IsActive)
-										.OrderByDescending(x => x.ModifiedOn)
-										.Skip((model.pageNo - 1) * model.pageSize)
-										.Take(model.pageSize)
-										.ToList();
+                if (string.IsNullOrEmpty(model.searchTerm))
+                {
+                    model.Questions = quiz.Questions
+                                        .Where(q => q.IsActive && q.IsQuiz == true)
+                                        .OrderByDescending(x => x.ModifiedOn)
+                                        .Skip((model.pageNo - 1) * model.pageSize)
+                                        .Take(model.pageSize)
+                                        .ToList();
 
-					model.TotalCount = quiz.Questions
-										.Where(q => q.IsActive).Count();
-				}
-				else
-				{
-					model.Questions = quiz.Questions
-										.Where(q => q.IsActive)
-										.Where(x => x.Title.ToLower().StartsWith(model.searchTerm))
-										.OrderByDescending(x => x.ModifiedOn)
-										.Skip((model.pageNo - 1) * model.pageSize)
-										.Take(model.pageSize)
-										.ToList();
+                    model.TotalCount = quiz.Questions
+                                        .Where(q => q.IsActive && q.IsQuiz == true).Count();
+                }
+                else
+                {
+                    model.Questions = quiz.Questions
+                                        .Where(q => q.IsActive && q.IsQuiz == true)
+                                        .Where(x => x.Title.ToLower().StartsWith(model.searchTerm))
+                                        .OrderByDescending(x => x.ModifiedOn)
+                                        .Skip((model.pageNo - 1) * model.pageSize)
+                                        .Take(model.pageSize)
+                                        .ToList();
 
-					model.TotalCount = quiz.Questions
-										.Where(q => q.IsActive)
-										.Where(x => x.Title.ToLower().StartsWith(model.searchTerm))
-										.Count();
-				}
+                    model.TotalCount = quiz.Questions
+                                        .Where(q => q.IsActive && q.IsQuiz == true)
+                                        .Where(x => x.Title.ToLower().StartsWith(model.searchTerm))
+                                        .Count();
+                }
 
-				model.Pager = new Pager(model.TotalCount, model.pageNo, model.pageSize);
-			}
-			else return HttpNotFound();
+                model.Pager = new Pager(model.TotalCount, model.pageNo, model.pageSize);
+            }
+            else return HttpNotFound();
 
-			return View(model);
+            return View(model);
         }
 
-		[HttpGet]
-		public async Task<ActionResult> QuestionOperation(string Operation, int QuizID, int? ID)
-		{
-			QuestionViewModel model = new QuestionViewModel();
+        [HttpGet]
+        public async Task<ActionResult> QuestionOperation(string Operation, int QuizID, int? ID)
+        {
+            QuestionViewModel model = new QuestionViewModel();
 
-			if (Operation == Operations.Create)
-			{
-				var quiz = await db.Quizzes.FindAsync(QuizID);
+            if (Operation == Operations.Create)
+            {
+                var quiz = await db.Quizzes.FindAsync(QuizID);
 
-				if (quiz == null || !quiz.IsActive) return HttpNotFound();
+                if (quiz == null || !quiz.IsActive) return HttpNotFound();
 
-				model.PageInfo = new PageInfo()
-				{
-					PageTitle = "Add New Question",
-					PageDescription = "Add questions to selected quiz."
-				};
+                model.PageInfo = new PageInfo()
+                {
+                    PageTitle = "Add New Question",
+                    PageDescription = "Add questions to selected quiz."
+                };
 
-				model.QuizID = quiz.ID;
+                model.QuizID = quiz.ID;
 
-				return View(model);
-			}
-			else if (Operation == Operations.Modify)
-			{
-				if (!ID.HasValue) return HttpNotFound();
+                return View(model);
+            }
+            else if (Operation == Operations.Modify)
+            {
+                if (!ID.HasValue) return HttpNotFound();
 
-				var quiz = await db.Quizzes.FindAsync(QuizID);
+                var quiz = await db.Quizzes.FindAsync(QuizID);
 
-				if (quiz == null || !quiz.IsActive) return HttpNotFound();
+                if (quiz == null || !quiz.IsActive) return HttpNotFound();
 
-				var question = quiz.Questions.FirstOrDefault(q=>q.ID == ID.Value);
-				
-				if (question == null || !question.IsActive) return HttpNotFound();
+                var question = quiz.Questions.FirstOrDefault(q => q.ID == ID.Value);
 
-				model.PageInfo = new PageInfo()
-				{
-					PageTitle = "Modify Question",
-					PageDescription = "Modify selected question."
-				};
+                if (question == null || !question.IsActive) return HttpNotFound();
 
-				model.QuizID = QuizID;
-				model.ID = question.ID;
-				model.Title = question.Title;
-				model.Options = question.Options.Where(o => o.IsActive).ToList();
-				model.CorrectOption = model.Options.Find(q => q.IsCorrect);
+                model.PageInfo = new PageInfo()
+                {
+                    PageTitle = "Modify Question",
+                    PageDescription = "Modify selected question."
+                };
 
-				model.Options.Remove(model.CorrectOption);
+                model.QuizID = QuizID;
+                model.ID = question.ID;
+                model.Title = question.Title;
+                model.Options = question.Options.Where(o => o.IsActive).ToList();
+                model.CorrectOption = model.Options.Find(q => q.IsCorrect);
 
-				return View(model);
-			}
-			else return HttpNotFound();
-		}
+                model.Options.Remove(model.CorrectOption);
 
-		[HttpPost]
-		public async Task<ActionResult> QuestionOperation(string Operation, FormCollection collection)
-		{
-			QuestionViewModel model = GetQuestionViewModelFromFormCollection(collection);
-			
-			if (Operation == Operations.Create)
-			{
-				var quiz = await db.Quizzes.FindAsync(model.QuizID);
+                return View(model);
+            }
+            else return HttpNotFound();
+        }
 
-				if (quiz == null || !quiz.IsActive) return HttpNotFound();
+        [HttpPost]
+        public async Task<ActionResult> QuestionOperation(string Operation, FormCollection collection)
+        {
+            QuestionViewModel model = GetQuestionViewModelFromFormCollection(collection);
 
-				model.PageInfo = new PageInfo()
-				{
-					PageTitle = "Add New Question",
-					PageDescription = "Add questions to selected quiz."
-				};
+            if (Operation == Operations.Create)
+            {
+                var quiz = await db.Quizzes.FindAsync(model.QuizID);
 
-				if (string.IsNullOrEmpty(model.Title) || model.CorrectOption == null || model.Options.Count == 0)
-				{
-					if (string.IsNullOrEmpty(model.Title))
-					{
-						ModelState.AddModelError("Title", "Please enter question title.");
-					}
+                if (quiz == null || !quiz.IsActive) return HttpNotFound();
 
-					if (model.CorrectOption == null)
-					{
-						ModelState.AddModelError("CorrectOption", "Please enter correct option.");
-					}
+                model.PageInfo = new PageInfo()
+                {
+                    PageTitle = "Add New Question",
+                    PageDescription = "Add questions to selected quiz."
+                };
 
-					if (model.Options.Count == 0)
-					{
-						ModelState.AddModelError("Options", "Please enter some other options.");
-					}
+                if (string.IsNullOrEmpty(model.Title) || model.CorrectOption == null || model.Options.Count == 0)
+                {
+                    //if (model.TypeOfQuestion == "mc")
+                    //{
+                    if (string.IsNullOrEmpty(model.Title))
+                    {
+                        ModelState.AddModelError("Title", "Please enter question title.");
+                    }
 
-					return View(model);
-				}
+                    if (model.CorrectOption == null)
+                    {
+                        ModelState.AddModelError("CorrectOption", "Please enter correct option.");
+                    }
 
-				await CreateQuestionAsync(quiz, model);
+                    if (model.Options.Count == 0)
+                    {
+                        ModelState.AddModelError("Options", "Please enter some other options.");
+                    }
 
-				return RedirectToAction("QuestionOperation", new { Operation = Operations.Create, QuizID = model.QuizID });
-			}
-			else if (Operation == Operations.Update && model.ID > 0)
-			{
-				var quiz = await db.Quizzes.FindAsync(model.QuizID);
+                    return View(model);
+                    //}
 
-				if (quiz == null || !quiz.IsActive) return HttpNotFound();
+                }
 
-				var question = await db.Questions.FindAsync(model.ID);
 
-				if (question == null || !question.IsActive) return HttpNotFound();
 
-				model.PageInfo = new PageInfo()
-				{
-					PageTitle = "Modify Question",
-					PageDescription = "Modify selected question."
-				};
+                await CreateQuestionAsync(quiz, model);
 
-				if (string.IsNullOrEmpty(model.Title) || model.CorrectOption == null || model.Options.Count == 0)
-				{
-					if (string.IsNullOrEmpty(model.Title))
-					{
-						ModelState.AddModelError("Title", "Please enter question title.");
-					}
+                return RedirectToAction("QuestionOperation", new { Operation = Operations.Create, QuizID = model.QuizID });
+            }
+            else if (Operation == Operations.Update && model.ID > 0)
+            {
+                var quiz = await db.Quizzes.FindAsync(model.QuizID);
 
-					if (model.CorrectOption == null)
-					{
-						ModelState.AddModelError("CorrectOption", "Please enter correct option.");
-					}
+                if (quiz == null || !quiz.IsActive) return HttpNotFound();
 
-					if (model.Options.Count == 0)
-					{
-						ModelState.AddModelError("Options", "Please enter some other options.");
-					}
+                var question = await db.Questions.FindAsync(model.ID);
 
-					return View(model);
-				}
+                if (question == null || !question.IsActive || !question.IsQuiz) return HttpNotFound();
 
-				await UpdateQuestionAsync(quiz, model, question);
+                model.PageInfo = new PageInfo()
+                {
+                    PageTitle = "Modify Question",
+                    PageDescription = "Modify selected question."
+                };
 
-				return RedirectToAction("Index", new { quizID = question.QuizID });
-			}
-			else if (Operation == Operations.Delete && model.ID > 0)
-			{
-				var quiz = await db.Quizzes.FindAsync(model.QuizID);
+                if (string.IsNullOrEmpty(model.Title) || model.CorrectOption == null || model.Options.Count == 0)
+                {
+                    if (string.IsNullOrEmpty(model.Title))
+                    {
+                        ModelState.AddModelError("Title", "Please enter question title.");
+                    }
 
-				if (quiz == null || !quiz.IsActive) return HttpNotFound();
+                    if (model.CorrectOption == null)
+                    {
+                        ModelState.AddModelError("CorrectOption", "Please enter correct option.");
+                    }
 
-				var question = await db.Questions.FindAsync(model.ID);
+                    if (model.Options.Count == 0)
+                    {
+                        ModelState.AddModelError("Options", "Please enter some other options.");
+                    }
 
-				if (question == null || !question.IsActive) return HttpNotFound();
+                    return View(model);
+                }
 
-				await DeleteQuestionAsync(quiz, model, question);
+                await UpdateQuestionAsync(quiz, model, question);
 
-				return RedirectToAction("Index", new { quizID = question.QuizID });
-			}
-			else return HttpNotFound();			
-		}
-		
-		private async Task<Question> CreateQuestionAsync(Quiz quiz, QuestionViewModel model)
-		{
-			Question question = new Question();
-			question.QuizID = quiz.ID;
-			question.Title = model.Title;
+                return RedirectToAction("Index", new { quizID = question.QuizID });
+            }
+            else if (Operation == Operations.Delete && model.ID > 0)
+            {
+                var quiz = await db.Quizzes.FindAsync(model.QuizID);
 
-			question.Options = new List<Option>();
-			question.Options.Add(model.CorrectOption);
-			question.Options.AddRange(model.Options);
+                if (quiz == null || !quiz.IsActive) return HttpNotFound();
 
-			question.IsActive = true;
-			question.ModifiedOn = DateTime.Now;
+                var question = await db.Questions.FindAsync(model.ID);
 
-			db.Questions.Add(question);
-			
-			await db.SaveChangesAsync();
+                if (question == null || !question.IsActive) return HttpNotFound();
 
-			return question;
-		}
+                await DeleteQuestionAsync(quiz, model, question);
 
-		private async Task<Question> UpdateQuestionAsync(Quiz quiz, QuestionViewModel model, Question question)
-		{
-			foreach (var option in question.Options.ToList())
-			{
-				option.IsActive = false;
-				option.ModifiedOn = DateTime.Now;
+                return RedirectToAction("Index", new { quizID = question.QuizID });
+            }
+            else return HttpNotFound();
+        }
 
-				db.Entry(question).State = System.Data.Entity.EntityState.Modified;
-			}
+        private async Task<Question> CreateQuestionAsync(Quiz quiz, QuestionViewModel model)
+        {
+            Question question = new Question();
+            question.QuizID = quiz.ID;
+            question.IsQuiz = true;
+            question.Title = model.Title;
+            //question.TypeOfQuestion = Operations.GetQuestionType(model.TypeOfQuestion);   TODO
 
-			question.QuizID = quiz.ID;
-			question.Title = model.Title;
+            question.Options = new List<Option>();
+            question.Options.Add(model.CorrectOption);
+            question.Options.AddRange(model.Options);
 
-			question.Options = new List<Option>();
-			question.Options.Add(model.CorrectOption);
-			question.Options.AddRange(model.Options);
-			
-			question.ModifiedOn = DateTime.Now;
 
-			db.Entry(question).State = System.Data.Entity.EntityState.Modified;
 
-			await db.SaveChangesAsync();
+            question.IsActive = true;
+            question.ModifiedOn = DateTime.Now;
 
-			return question;
-		}
+            db.Questions.Add(question);
 
-		private async Task<Question> DeleteQuestionAsync(Quiz quiz, QuestionViewModel model, Question question)
-		{
-			foreach (var attemptedQuestion in db.AttemptedQuestions.Where(at=>at.Question.ID == question.ID).ToList())
-			{
-				attemptedQuestion.IsActive = false;
-				attemptedQuestion.ModifiedOn = DateTime.Now;
+            await db.SaveChangesAsync();
 
-				db.Entry(attemptedQuestion).State = System.Data.Entity.EntityState.Modified;
-			}
+            return question;
+        }
 
-			question.IsActive = false;
-			question.ModifiedOn = DateTime.Now;
+        private async Task<Question> UpdateQuestionAsync(Quiz quiz, QuestionViewModel model, Question question)
+        {
+            foreach (var option in question.Options.ToList())
+            {
+                option.IsActive = false;
+                option.ModifiedOn = DateTime.Now;
 
-			db.Entry(question).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(question).State = System.Data.Entity.EntityState.Modified;
+            }
 
-			await db.SaveChangesAsync();
+            question.QuizID = quiz.ID;
+            question.Title = model.Title;
+            question.TypeOfQuestion = Operations.GetQuestionType(model.TypeOfQuestion);
 
-			return question;
-		}
-		
-		private QuestionViewModel GetQuestionViewModelFromFormCollection(FormCollection collection)
-		{
-			QuestionViewModel model = new QuestionViewModel();
-			
-			model.Options = new List<Option>();
+            question.Options = new List<Option>();
+            question.Options.Add(model.CorrectOption);
+            question.Options.AddRange(model.Options);
 
-			if (collection.AllKeys.Count() > 0)
-			{
-				foreach (string key in collection)
-				{
-					if (key == "QuizID")
-					{
-						model.QuizID = int.Parse(collection[key]);
-					}
-					else if (key == "ID")
-					{
-						model.ID = int.Parse(collection[key]);
-					}
-					else if (key == "Title")
-					{
-						model.Title = collection[key];
-					}
-					else if (key == "CorrectOption")
-					{
-						if (!string.IsNullOrEmpty(collection[key]))
-						{
-							model.CorrectOption = new Option()
-							{
-								Answer = collection[key],
-								IsCorrect = true,
-								IsActive = true
-							};
-						}
-					}
-					else if (key.Contains("optionNo")) //this must be Option
-					{
-						if (!string.IsNullOrEmpty(collection[key]))
-						{
-							string OptionIndex = key.Substring("optionNo".Length, key.Length - "optionNo".Length);
+            question.ModifiedOn = DateTime.Now;
 
-							model.Options.Add(
-								new Option()
-								{
-									Answer = collection[key],
-									IsActive = true
-								}
-							);
-						}
-					}
-				}
-			}
+            db.Entry(question).State = System.Data.Entity.EntityState.Modified;
 
-			return model;
-		}
-	}
+            await db.SaveChangesAsync();
+
+            return question;
+        }
+
+        private async Task<Question> DeleteQuestionAsync(Quiz quiz, QuestionViewModel model, Question question)
+        {
+            foreach (var attemptedQuestion in db.AttemptedQuestions.Where(at => at.Question.ID == question.ID).ToList())
+            {
+                attemptedQuestion.IsActive = false;
+                attemptedQuestion.ModifiedOn = DateTime.Now;
+
+                db.Entry(attemptedQuestion).State = System.Data.Entity.EntityState.Modified;
+            }
+
+            question.IsActive = false;
+            question.ModifiedOn = DateTime.Now;
+
+            db.Entry(question).State = System.Data.Entity.EntityState.Modified;
+
+            await db.SaveChangesAsync();
+
+            return question;
+        }
+
+        private QuestionViewModel GetQuestionViewModelFromFormCollection(FormCollection collection)
+        {
+            QuestionViewModel model = new QuestionViewModel();
+
+            model.Options = new List<Option>();
+
+            if (collection.AllKeys.Count() > 0)
+            {
+                foreach (string key in collection)
+                {
+                    if (key == "QuizID")
+                    {
+                        model.QuizID = int.Parse(collection[key]);
+                    }
+                    else if (key == "ID")
+                    {
+                        model.ID = int.Parse(collection[key]);
+                    }
+                    else if (key == "Title")
+                    {
+                        model.Title = collection[key];
+                    }
+
+                    else if (key.Contains("optionNo")) //this must be Option
+                    {
+                        if (!string.IsNullOrEmpty(collection[key]))
+                        {
+                            string OptionIndex = key.Substring("optionNo".Length, key.Length - "optionNo".Length);
+
+                            model.Options.Add(
+                                new Option()
+                                {
+                                    Answer = collection[key],
+                                    IsActive = true
+                                }
+                            );
+                        }
+                    }
+                    else if (key == "CorrectOption")
+                    {
+                        //model.TypeOfQuestion = collection[key];
+
+                        //if (model.TypeOfQuestion == "mc" && !string.IsNullOrEmpty(collection["CorrectOption"]))
+                        //{
+                        if (collection["CorrectOption"] != "")
+                        {
+                            model.CorrectOption = new Option()
+                            {
+                                Answer = collection["CorrectOption"],
+                                IsCorrect = true,
+                                IsActive = true
+                            };
+                        }
+
+                        //}
+                        //if (model.TypeOfQuestion == "sc" && !string.IsNullOrEmpty(collection["smileyrating"]))
+                        //{
+                        //    model.CorrectOption = new Option()
+                        //    {
+                        //        Answer = collection["smileyrating"],
+                        //        IsCorrect = true,
+                        //        IsActive = true
+                        //    };
+                        //}
+                        //if (model.TypeOfQuestion == "lc" && !string.IsNullOrEmpty(collection["starrating"]))
+                        //{
+                        //    model.CorrectOption = new Option()
+                        //    {
+                        //        Answer = collection["starrating"],
+                        //        IsCorrect = true,
+                        //        IsActive = true
+                        //    };
+                        //}
+                        //if (model.TypeOfQuestion == "oc" && !string.IsNullOrEmpty(collection["Description"]))
+                        //{
+                        //    model.CorrectOption = new Option()
+                        //    {
+                        //        Answer = collection["Description"],
+                        //        IsCorrect = true,
+                        //        IsActive = true
+                        //    };
+                        //}
+
+                    }
+
+                    else
+                    {
+                        var dfgdf = collection[key];
+                    }
+                }
+            }
+
+            return model;
+        }
+    }
 }

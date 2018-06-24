@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Quizbee.Commons;
+using Quizbee.Database;
 using Quizbee.Models;
 using Quizbee.ViewModels;
 using System;
@@ -80,7 +82,7 @@ namespace Quizbee.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+				var user = new ApplicationUser { UserName = model.UserName, Email = model.Email,Gender = model.Gender, DateOfBirth = model.DateOfBirth };
 				var result = await UserManager.CreateAsync(user, model.Password);
 				if (result.Succeeded)
 				{
@@ -116,7 +118,23 @@ namespace Quizbee.Controllers
 			switch (result)
 			{
 				case SignInStatus.Success:
-					return RedirectToLocal(returnUrl);
+
+                    ApplicationDbContext kjhgfd = new ApplicationDbContext();
+
+                    var userdfv = model.UserName;
+                    DateTime ddf = DateTime.Now;
+                    var dfkj = kjhgfd.Users.Where(p => p.UserName == userdfv).FirstOrDefault();
+                    //DateTime dfd = ddf - dfkj;
+
+                    var fghj = ddf - dfkj.DateOfBirth;
+
+                    var years = fghj.Days / 365;
+
+                    //Utility dssd = new Utility();
+
+                    Utility.UserRoleId = years.ToString();
+
+                    return RedirectToLocal(returnUrl);
 				default:
 					ModelState.AddModelError("", "Invalid login attempt.");
 					return View("Login", "_LayoutEmpty", model);
@@ -294,11 +312,16 @@ namespace Quizbee.Controllers
 
 		private ActionResult RedirectToLocal(string returnUrl)
 		{
-			if (Url.IsLocalUrl(returnUrl))
+            //ApplicationDbContext db = new ApplicationDbContext();
+            //var gjh = User.Identity.Name;
+            //var age = DateTime.Now - db.Users.Where(p => p.UserName == gjh).FirstOrDefault().DateOfBirth;
+            //var ageiny = age.
+
+            if (Url.IsLocalUrl(returnUrl))
 			{
 				return Redirect(returnUrl);
 			}
-			return RedirectToAction("Index", "Home");
+			return RedirectToAction("Welcome", "Home");
 		}
 
 		protected override void Dispose(bool disposing)
