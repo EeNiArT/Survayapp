@@ -21,9 +21,12 @@ namespace Quizbee.Database
 
 		public DbSet<Quiz> Quizzes { get; set; }
 		public DbSet<Question> Questions { get; set; }
-		public DbSet<Option> Options { get; set; }
+        public DbSet<SQuestion> SQuestions { get; set; }
+        public DbSet<Option> Options { get; set; }
 		public DbSet<StudentQuiz> StudentQuizzes { get; set; }
-		public DbSet<AttemptedQuestion> AttemptedQuestions { get; set; }
+        public DbSet<StudentSurvey> StudentSurveys { get; set; }
+        public DbSet<AttemptedQuestion> AttemptedQuestions { get; set; }
+        public DbSet<AttemptedSQuestion> AttemptedSQuestions { get; set; }
         public DbSet<Survey> Surveys { get; set; }
 
 	}

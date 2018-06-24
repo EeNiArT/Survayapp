@@ -131,6 +131,7 @@ namespace Quizbee.Helpers
             return routeURL.ToLower();
         }
 
+
         public static string QuizzesList(this UrlHelper helper, string searchTerm = "", int? pageNo = 1, int? pageSize = 10)
         {
             string routeURL = string.Empty;
@@ -211,6 +212,24 @@ namespace Quizbee.Helpers
             return routeURL.ToLower();
         }
 
+
+        public static string SurveysList(this UrlHelper helper, string searchTerm = "", int? pageNo = 1, int? pageSize = 10)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("Surveys", new
+            {
+                controller = "Survey",
+                action = "Index",
+                search = searchTerm,
+                page = pageNo.Value,
+                items = pageSize.Value
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
         public static string CreateSurvey(this UrlHelper helper)
         {
             string routeURL = string.Empty;
@@ -273,6 +292,7 @@ namespace Quizbee.Helpers
             routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
             return routeURL.ToLower();
         }
+
 
         public static string QuestionsList(this UrlHelper helper, int quizID, string searchTerm = "", int? pageNo = 1, int? pageSize = 10)
         {
@@ -359,6 +379,93 @@ namespace Quizbee.Helpers
             return routeURL.ToLower();
         }
 
+
+        public static string SQuestionsList(this UrlHelper helper, int SurveyID, string searchTerm = "", int? pageNo = 1, int? pageSize = 10)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SQuestionsList", new
+            {
+                controller = "SQuestion",
+                action = "Index",
+                SurveyID = SurveyID,
+                search = searchTerm,
+                page = pageNo.Value,
+                items = pageSize.Value
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string AddSQuestion(this UrlHelper helper, int SurveyID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SQuestionOperation", new
+            {
+                controller = "SQuestion",
+                action = "SQuestionOperation",
+                Operation = Operations.Create,
+                SurveyID = SurveyID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string ModifySQuestion(this UrlHelper helper, int SurveyID, int questionID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SQuestionOperation", new
+            {
+                controller = "SQuestion",
+                action = "SQuestionOperation",
+                Operation = Operations.Modify,
+                QuizID = SurveyID,
+                ID = questionID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string UpdateSQuestion(this UrlHelper helper, int SurveyID, int questionID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SQuestionOperation", new
+            {
+                controller = "SQuestion",
+                action = "SQuestionOperation",
+                Operation = Operations.Update,
+                QuizID = SurveyID,
+                ID = questionID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string DeleteSQuestion(this UrlHelper helper, int SurveyID, int questionID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("SQuestionOperation", new
+            {
+                controller = "SQuestion",
+                action = "SQuestionOperation",
+                Operation = Operations.Delete,
+                QuizID = SurveyID,
+                ID = questionID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+
         public static string AttemptQuiz(this UrlHelper helper, int quizID)
         {
             string routeURL = string.Empty;
@@ -403,6 +510,52 @@ namespace Quizbee.Helpers
             return routeURL.ToLower();
         }
 
+
+        public static string AttemptSurvey(this UrlHelper helper, int SurveyID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("AttemptSurvey", new
+            {
+                controller = "AttemptSurvey",
+                action = "Attempt",
+                SurveyID = SurveyID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string AnswerSQuestion(this UrlHelper helper, int SurveyID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("AnswerSQuestion", new
+            {
+                controller = "AttemptSurvey",
+                action = "AnswerSQuestion"
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string AttemptSDetails(this UrlHelper helper, int attemptID)
+        {
+            string routeURL = string.Empty;
+
+            routeURL = helper.RouteUrl("AttemptSDetails", new
+            {
+                controller = "AttemptSurvey",
+                action = "AttemptSDetails",
+                attemptID = attemptID
+            });
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+
         public static string MyResults(this UrlHelper helper, bool? isPartial = false, string searchTerm = "", int? pageNo = 1, int? pageSize = 10)
         {
             string routeURL = string.Empty;
@@ -435,15 +588,47 @@ namespace Quizbee.Helpers
             return routeURL.ToLower();
         }
 
-        public static string Survey(this UrlHelper helper)
+        public static string MySResults(this UrlHelper helper, bool? isPartial = false, string searchTerm = "", int? pageNo = 1, int? pageSize = 10)
         {
             string routeURL = string.Empty;
 
-            routeURL = helper.RouteUrl("Survey");
+            if (!isPartial.HasValue || !isPartial.Value)
+            {
+                routeURL = helper.RouteUrl("MySResults", new
+                {
+                    controller = "AttemptSurvey",
+                    action = "MyResults",
+                    search = searchTerm,
+                    page = pageNo.Value,
+                    items = pageSize.Value
+                });
+            }
+            else
+            {
+                routeURL = helper.RouteUrl("MySResults", new
+                {
+                    controller = "AttemptSurvey",
+                    action = "MyResults",
+                    isPartial = isPartial,
+                    search = searchTerm,
+                    page = pageNo.Value,
+                    items = pageSize.Value
+                });
+            }
 
             routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
             return routeURL.ToLower();
         }
+
+        //public static string Survey(this UrlHelper helper)
+        //{
+        //    string routeURL = string.Empty;
+
+        //    routeURL = helper.RouteUrl("Survey");
+
+        //    routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+        //    return routeURL.ToLower();
+        //}
 
     }
 }
