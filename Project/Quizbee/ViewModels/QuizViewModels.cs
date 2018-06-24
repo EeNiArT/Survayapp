@@ -27,6 +27,9 @@ namespace Quizbee.ViewModels
 		public int Minutes { get; set; }
 		public int NoOfQuestions { get; set; }
 
+        public int TypeOfQuestion { get; set; }
+        public bool IsMale { get; set; }
+
 		public List<Question> Questions { get; set; }
 		public TimeSpan TimeDuration { get; internal set; }
 	}

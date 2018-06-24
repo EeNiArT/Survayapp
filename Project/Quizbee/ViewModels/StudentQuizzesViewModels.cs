@@ -46,4 +46,11 @@ namespace Quizbee.ViewModels
 
 		public List<StudentQuiz> StudentQuizzes { get; set; }
 	}
+
+    public class StudentresultViewModel
+    {
+        public StudentQuizListViewModel studentQuizListVieww { get; set; }
+
+        public StudentSurveyListViewModel studentSurveyListVieww { get; set; }
+    }
 }

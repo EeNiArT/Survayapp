@@ -71,7 +71,7 @@
 												}
 											</td>
 											<td class="align-middle text-center wrap-td hide-phone">
-												@quiz.Questions.Where(q=>q.IsActive).ToList().Count
+												@quiz.Questions.Where(q=>q.IsActive && q.IsQuiz == true).ToList().Count
 											</td>
 											<td class="align-middle wrap-td">
 												<div class="input-group">

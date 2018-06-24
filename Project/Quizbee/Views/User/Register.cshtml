@@ -48,6 +48,33 @@
 									</div>
 								</div>
 
+                                <div class="form-group m-b-20">
+                                    <div class="col-xs-12">
+                                        <label for="DateOfBirth">Date Of Birth</label>
+                                        <input type="date" name="DateOfBirth" class="form-control" value="@Model.DateOfBirth">
+                                        @*@Html.TextBoxFor(m => m.DateOfBirth, new { type = "time", @class = "orm-control" })*@
+                                        @*@Html.TextBoxFor(m => m.DateOfBirth, "", new { @class = "orm-control" })*@
+                                        @Html.ValidationMessageFor(m => m.DateOfBirth, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group m-b-20">
+                                    <div class="col-xs-12">
+                                        @Html.LabelFor(m => m.Gender) <br />
+
+                                        Male: @Html.RadioButtonFor(m => m.Gender, "Male")
+                                        Female: @Html.RadioButtonFor(m => m.Gender, "Female")
+
+
+                                        
+
+
+                                        @*@Html.RadioButton(m => m.Gender, "")
+    @Html.RadioButton(m => m.Gender, "")
+    @Html.Partial("~/Views/Partials/malefemale.cshtml")*@
+                                    </div>
+                                </div>
+
 								<div class="form-group m-b-30">
 									<div class="col-xs-12">
 										<div class="checkbox checkbox-primary">

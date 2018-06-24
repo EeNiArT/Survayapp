@@ -1,0 +1,135 @@
+﻿@model Quizbee.ViewModels.AttemptSurveyViewModel
+
+@if (Model != null && Model.SQuestion != null)
+{
+    <input type="hidden" id="TypeofSQuestion" value="@Model.SQuestion.TypeOfQuestion" />
+    <form role="form" id="answerForm" method="post">
+        <div class="form-group">
+            <h1>@Model.SQuestion.Title</h1>
+            <hr />
+        </div>
+
+        <div class="form-group">
+            @if (Model.SQuestion.TypeOfQuestion == 2)//smi
+            {
+                @Html.Partial("~/Views/Partials/Smileys.cshtml");
+            }
+            else if (Model.SQuestion.TypeOfQuestion == 3)//like
+            {
+                @Html.Partial("~/Views/Partials/Starsratting.cshtml");
+            }
+            else if (Model.SQuestion.TypeOfQuestion == 4)//open
+            {
+                @Html.Partial("~/Views/Partials/TextBox.cshtml");
+            }
+            else
+            {
+                foreach (var option in Model.Options)
+                {
+                    <div class="radio radio-success">
+                        <input type="radio" name="SelectedOptionID" value="@option.ID">
+                        <label for="SelectedOptionID">
+                            @option.Answer
+                        </label>
+                    </div>}
+            }
+            @if(Model.SQuestion.TypeOfQuestion != 1)
+            {
+                <input type="hidden" name="OptionIdnotmcq" value="@Model.Options.FirstOrDefault().ID" />
+            }
+
+        </div>
+
+        <div id="actionsRow">
+            <hr />
+            <button type="button" id="submitButton" class="btn btn-info waves-effect waves-light w-md"><i class="fas fa-check mg-r-10"></i>&nbsp;Submit Answer</button>
+        </div>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $("#submitButton").click(function () {
+                debugger;
+                var ko = $("#TypeofSQuestion").val();
+                if(ko == 1) {
+
+                
+                var SelectedOption = $("input[name='SelectedOptionID']:checked").val();
+                }
+                else if (ko == 2) {
+                    var SelectedOption = $("input[name='smileyrating']").val();
+                }
+                else if (ko == 3) {
+                    var SelectedOption = $("input:checked").val();
+                }
+                else {
+                    var SelectedOption = $("#Description").val();
+                }
+                if (SelectedOption) {
+                    SubmitAnswer(ko);
+                }
+                else {
+                    swal({
+                        title: 'Select an Option',
+                        type: 'warning',
+                        confirmButtonColor: '#4fa7f3'
+                    });
+                }
+            });
+        });
+
+        function SubmitAnswer(e) {
+            debugger;
+            if (e == 1) {
+
+
+                var SelectedOption = $("input[name='SelectedOptionID']:checked").val();
+                var optionidd = SelectedOption;
+            }
+            else if (e == 2) {
+                var SelectedOption = $("input[name='smileyrating']").val();
+            }
+            else if (e == 3) {
+                var SelectedOption = $("input:checked").val();
+            }
+            else {
+                var SelectedOption = $("#Description").val();
+            }
+            if (e != 1) {
+                var optionidd = $("input[name='OptionIdnotmcq']").val();
+            }
+
+
+            $.ajax({
+                type: "POST",
+                async: false,
+                url: '@Url.AnswerSQuestion(Model.SurveyID)',
+                data: {
+                    StudentSurveyID: '@Model.StudentSurveyID',
+                    SurveyID: '@Model.SurveyID',
+                    QuestionID: '@Model.SQuestion.ID',
+                    QuestionIndex: '@Model.QuestionIndex',
+                    AnswerValue: SelectedOption,
+                    AnswerType : e,
+                    SelectedOptionID: optionidd,
+                    TimerExpired: $("#TimerExpired").val()
+                }
+            })
+                .done(function (data) {
+
+                    $('#contenter').toggle('slide', {
+                        direction: 'left'
+                    }, 250, function () {
+                        $("#contenter").html(data);
+                        $('#contenter').toggle('slide', {
+                            direction: 'right'
+                        }, 250);
+                    });
+                })
+                .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                });
+        }
+    </script>
+
+}

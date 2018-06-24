@@ -1,0 +1,174 @@
+﻿@model Quizbee.ViewModels.WelcomeViewModel
+
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #welcome {
+        color: #def4f5;
+        text-shadow: 0 1px 3px white, -10px 0 8px black;
+        display: flex;
+        height: 40%;
+        min-height: 40vh;
+        min-width: 100vw;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+    }
+
+        #welcome div:hover {
+            text-shadow: 0 0 1px white, 0 0 0 black;
+        }
+
+        #welcome div {
+            align-items: center;
+            background: #0bb1b0;
+            box-shadow: 0 0 100px black;
+            cursor: pointer;
+            display: flex;
+            font-size: 5em;
+            font-weight: bold;
+            width: 50%;
+        }
+
+    #left {
+        justify-content: flex-end;
+    }
+
+    #right {
+        justify-content: flex-start !important;
+    }
+
+    .Of {
+        justify-content: flex-end;
+        width: 0 !important;
+        visibility: hidden;
+    }
+
+    #Of {
+        width: 0;
+    }
+
+    .On {
+        width: 100% !important;
+    }
+
+    /*--------------------------------*/
+
+    #lorem {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        height: 100vh;
+        justify-content: center;
+    }
+
+        #lorem p {
+            background: #0bb1b0;
+            box-shadow: 0 15px 18px -10px #0bb1b0;
+            font-size: 1.1em;
+            margin: 1em;
+            padding: 1.5em;
+            width: 25em;
+            color:#fff;
+        }
+</style>
+
+
+@*<div class="container-fluid">
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><i class="fas fa-clipboard-list"></i>&nbsp;Welcome</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<section id='welcome'>
+    <div id='left'>¡WELC</div>
+    <span id='Of'></span>
+    <div id='right'>OME!</div>
+</section>
+@if (HttpContext.Current.Session["UserRole"] != null)
+{
+    int role = 0;
+    var rolll = HttpContext.Current.Session["UserRole"].ToString();
+    role = int.Parse(rolll);
+
+    if (role >= 18)
+    {
+
+        <div id='lorem'>
+            <h4>Quizz</h4>
+            <p>
+                You can add quizz,add quesstion to quizz,and atempt quiz
+            </p>
+
+
+            <h4>Survey</h4><p>
+                You can conduct Survey,add quesstion to Survey,and create survey
+            </p>
+        </div>
+    }
+    else if (role >= 16)
+    {
+        <div id='lorem'>
+            <h4>Quizz</h4>
+            <p>
+                You can add quizz,add quesstion to quizz,and atempt quiz
+            </p>
+        </div>
+    }
+    else
+    {
+        <div id='lorem'>
+            <h4>Sorry</h4>
+            <p>
+                You are not able to conduct the survey or quizz
+            </p>
+        </div>
+    }
+}
+else
+{
+    <div id='lorem'>
+        <h4>Sorry</h4>
+        <p>
+            You are not able to conduct the survey or quizz
+        </p>
+    </div>
+}
+
+
+
+
+<script>
+    //var divs = document.getElementById('welcome');
+    //divs = divs.getElementsByTagName('div');
+
+    //for (var i = 0; i < divs.length; i++) {
+    //    divs[i].onclick = splitScreen;
+    //}
+
+    //function splitScreen() {
+    //    document.getElementById('welcome').style.visibility = 'hidden';
+    //    var split = document.getElementById('Of');
+    //    if (true) {
+    //        split.className = 'On';
+    //        divs[0].className = 'Of';
+    //        divs[1].className = 'Of';
+    //    }
+    //}
+</script>

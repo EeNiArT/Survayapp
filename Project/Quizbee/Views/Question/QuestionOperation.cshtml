@@ -3,6 +3,7 @@
     ViewBag.Title = Model.PageInfo.PageTitle;
 
     var formAction = Model.ID > 0 ? Url.ModifyQuestion(Model.QuizID, Model.ID) : Url.AddQuestion(Model.QuizID);
+    var boop = 2;
 }
 <div class="container-fluid">
     <div class="row">
@@ -40,111 +41,95 @@
                             <input class="form-control" type="text" id="Title" name="Title" value="@Model.Title" placeholder="Enter question title">
                             @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Title"] != null && ViewData.ModelState["Title"].Errors.Count > 0)
                             {
-                                <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                    <i class="mdi mdi-alert"></i>
-                                    @Html.ValidationMessageFor(m => m.Title, "", new { @class = "tx-danger" })
-                                </div>
-                            }
-                        </div>
-                        @*<div class="form-group">
-                            <label for="Title">Answer Type</label>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="radio">
-                                        <input type='radio' value='Smiley Choice' name='radio' id='radio1' />
-                                        <label for='radio1'> Smiley Choice</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="radio">
-                                        <input type='radio' value='Star Rating' name='radio' id='radio1'>
-                                        <label for='radio1'> Star Rating</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="radio">
-                                        <input type='radio' value='Open Question' name='radio' id='radio1' />
-                                        <label for='radio1'> Open Question</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="radio">
-                                        <input type='radio' value='Multiple Choice' name='radio' id='radio1' />
-                                        <label for='radio1'> Multiple Choice</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>*@
-                        <div class="form-group"> @Html.Partial("~/Views/Partials/Radio.cshtml")</div>
-
-
-                       
-
-
-
-                        <div class="form-group">
-                            @Html.Partial("~/Views/Partials/Smileys.cshtml")
-                        </div>
-                        <div class="form-group">
-                            @Html.Partial("~/Views/Partials/Starsratting.cshtml")
-                        </div>
-                        <div class="form-group">@Html.Partial("~/Views/Partials/TextBox.cshtml")</div>
-                        <div class="form-group">
-                            <label for="CorrectOption">Correct Option</label>
-                            @{
-                                var correctOptionValue = Model.CorrectOption != null ? Model.CorrectOption.Answer : "";
-                            }
-                            <input class="form-control" type="text" id="CorrectOption" name="CorrectOption" value="@correctOptionValue" placeholder="Enter Correct Option">
-                            @if (!ViewData.ModelState.IsValid && ViewData.ModelState["CorrectOption"] != null && ViewData.ModelState["CorrectOption"].Errors.Count > 0)
-                            {
-                                <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                    <i class="mdi mdi-alert"></i>
-                                    @Html.ValidationMessageFor(m => m.CorrectOption, "", new { @class = "tx-danger" })
-                                </div>
-                            }
-                        </div>
-                        @if (Model.Options != null)
-                        {
-                            foreach (var option in Model.Options)
-                            {
-                                <div class="option form-group">
-                                    <label><span name="optionNoText">Option @(Model.Options.IndexOf(option) + 2)</span></label>
-                                    <input class="form-control" type="text" name="optionNo@(Model.Options.IndexOf(option) + 2)" placeholder="Enter Option" value="@option.Answer">
-                                </div>
-                            }
-                        }
-                        <span id="options"></span>
-                        @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Options"] != null && ViewData.ModelState["Options"].Errors.Count > 0)
-                        {
                             <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
                                 <i class="mdi mdi-alert"></i>
-                                @Html.ValidationMessageFor(m => m.Options, "", new { @class = "tx-danger" })
+                                @Html.ValidationMessageFor(m => m.Title, "", new { @class = "tx-danger" })
                             </div>
-                        }
-                        <div id="actionsRow">
-                            <hr />
-                            <button type="button" id="addOptionButton" class="btn btn-info waves-effect waves-light w-md"><i class="fas fa-plus mg-r-10"></i>&nbsp;Add Option</button>
-                            @if (Model.ID > 0)
-                            {
-                                <button type="submit" id="updateButton" class="btn btn-warning"><i class="fas fa-save mg-r-10"></i>&nbsp;Update this Question and Go Back</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash-alt mg-r-10"></i>&nbsp;Delete this Question</button>
                             }
-                            else
-                            {
-                                <button type="submit" id="addButton" class="btn btn-success waves-effect waves-light w-md"><i class="fas fa-save mg-r-10"></i>&nbsp;Save this Question and Add Another</button>
-                            }
-                            <a href="@Url.QuestionsList(Model.QuizID)" role="button" class="btn btn-primary waves-effect waves-light w-md"><i class="fas fa-times mg-r-10"></i>&nbsp;Cancel and Go Back</a>
                         </div>
+
+
+                        @*<div class="row">
+    <div class="col-md-3">
+        @if (!ViewData.ModelState.IsValid && ViewData.ModelState["TypeOfQuestion"] != null && ViewData.ModelState["TypeOfQuestion"].Errors.Count > 0)
+        {
+            <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <i class="mdi mdi-alert"></i>
+                @Html.ValidationMessageFor(m => m.TypeOfQuestion, "", new { @class = "tx-danger" })
+            </div>
+        }
+        <div id="blockanstyperadio" class="form-group"> @Html.Partial("~/Views/Partials/Radio.cshtml")</div>
+    </div>
+    <div class="col-md-8">
+        <div id="blocksmilies" style="display:none" class="form-group">
+            @Html.Partial("~/Views/Partials/Smileys.cshtml")
+        </div>
+        <div id="blockstarratting" style="display:none" class="form-group">
+            @Html.Partial("~/Views/Partials/Starsratting.cshtml")
+        </div>
+        <div id="blockopenanswer" style="display:none" class="form-group">@Html.Partial("~/Views/Partials/TextBox.cshtml")</div>*@
+
+                                <div id="blockmultiplechoice" class="form-group">
+                                    <label for="CorrectOption">Correct Option</label>
+                                    @{
+                                        var correctOptionValue = Model.CorrectOption != null ? Model.CorrectOption.Answer : "";
+                                    }
+                                    <input class="form-control" type="text" id="CorrectOption" name="CorrectOption" value="@correctOptionValue" placeholder="Enter Correct Option">
+                                    @if (!ViewData.ModelState.IsValid && ViewData.ModelState["CorrectOption"] != null && ViewData.ModelState["CorrectOption"].Errors.Count > 0)
+                                    {
+                                    <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                        <i class="mdi mdi-alert"></i>
+                                        @Html.ValidationMessageFor(m => m.CorrectOption, "", new { @class = "tx-danger" })
+                                    </div>
+                                    }
+                                    @if (Model.Options != null)
+                                    {
+                                        foreach (var option in Model.Options)
+                                        {
+                                    <div class="option form-group">
+                                        <label><span name="optionNoText">Option @(Model.Options.IndexOf(option) + 2)</span></label>
+                                        <input class="form-control" type="text" name="optionNo@(Model.Options.IndexOf(option) + 2)" placeholder="Enter Option" value="@option.Answer">
+                                    </div>
+                                        }
+                                    }
+                                    <span id="options"></span>
+                                    @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Options"] != null && ViewData.ModelState["Options"].Errors.Count > 0)
+                                    {
+                                    <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                        <i class="mdi mdi-alert"></i>
+                                        @Html.ValidationMessageFor(m => m.Options, "", new { @class = "tx-danger" })
+                                    </div>
+                                    }
+                                </div>
+                                <div id="actionsRow">
+                                    <hr />
+                                    <button type="button" id="addOptionButton" class="btn btn-info waves-effect waves-light w-md"><i class="fas fa-plus mg-r-10"></i>&nbsp;Add Option</button>
+                                    @if (Model.ID > 0)
+                                    {
+                                    <button type="submit" id="updateButton" class="btn btn-warning"><i class="fas fa-save mg-r-10"></i>&nbsp;Update this Question and Go Back</button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash-alt mg-r-10"></i>&nbsp;Delete this Question</button>
+                                    }
+                                    else
+                                    {
+                                    <button type="submit" id="addButton" class="btn btn-success waves-effect waves-light w-md"><i class="fas fa-save mg-r-10"></i>&nbsp;Save this Question and Add Another</button>
+                                    }
+                                    <a href="@Url.QuestionsList(Model.QuizID)" role="button" class="btn btn-primary waves-effect waves-light w-md"><i class="fas fa-times mg-r-10"></i>&nbsp;Cancel and Go Back</a>
+                                </div>
+
+                           
+
                     </form>
                 </div>
             </div>
@@ -172,30 +157,30 @@
     <input class="form-control" type="text" name="optionNo" placeholder="Enter Option">
 </div>
 <script>
-	$(document).ready(function () {
-		$("#addOptionButton").click(function () {
-			$('<div/>', {
-				'class': 'option form-group', html: GetHtml()
-			}).hide().insertBefore('#options').slideDown('slow');
-		});
+    $(document).ready(function () {
+        $("#addOptionButton").click(function () {
+            $('<div/>', {
+                'class': 'option form-group', html: GetHtml()
+            }).hide().insertBefore('#options').slideDown('slow');
+        });
 
-		function GetHtml() {
-			var len = $('.option').length + 2;
-			var $html = $('.optionRowTemplate').clone();
-			$html.find('[name=optionNoText]')[0].innerHTML = "Option " + len;
-			$html.find('[name=optionNo]')[0].name = "optionNo" + len;
-			return $html.html();
-		}
+        function GetHtml() {
+            debugger;
+            var len = $('.option').length + 2;
+            var $html = $('.optionRowTemplate').clone();
+            $html.find('[name=optionNoText]')[0].innerHTML = "Option " + len;
+            $html.find('[name=optionNo]')[0].name = "optionNo" + len;
+            return $html.html();
+        }
 
-		$("#updateButton").click(function () {
-			$("#operationForm").attr("action", "@Url.UpdateQuestion(Model.QuizID, Model.ID)");
-			$("#operationForm").submit();
-		});
-		$("#deleteButton").click(function () {
-			$("#operationForm").attr("action", "@Url.DeleteQuestion(Model.QuizID, Model.ID)");
-			$("#operationForm").submit();
-		});
-	});
+        $("#updateButton").click(function () {
+            $("#operationForm").attr("action", "@Url.UpdateQuestion(Model.QuizID, Model.ID)");
+            $("#operationForm").submit();
+        });
+        $("#deleteButton").click(function () {
+            $("#operationForm").attr("action", "@Url.DeleteQuestion(Model.QuizID, Model.ID)");
+            $("#operationForm").submit();
+        });
+    });
 
 </script>
-

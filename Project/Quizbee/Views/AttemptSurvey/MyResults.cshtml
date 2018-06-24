@@ -1,4 +1,4 @@
-﻿@model Quizbee.ViewModels.StudentQuizListViewModel
+﻿@model Quizbee.ViewModels.StudentSurveyListViewModel
 @{
 	ViewBag.Title = Model.PageInfo.PageTitle;
 
@@ -11,21 +11,31 @@
 			<div class="card">
 				<div class="card-header">
 					<ul class="nav nav nav-tabs card-header-tabs">
-						<li class="nav-item">
-							<a class="nav-link active" href="#"><i class="fas fa-clipboard-check"></i>&nbsp;@Model.PageInfo.PageTitle</a>
-						</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.MySResults()"><i class="fas fa-clipboard-check"></i>&nbsp; My Survey Results</a>
+                            <a class="nav-link" href="@Url.MyResults()"><i class="fas fa-clipboard-check"></i>&nbsp; My Quizz Results</a>
                         </li>
+                        @if (HttpContext.Current.Session["UserRole"] != null)
+                        {
+                        int rol= 0;
+                        var rolll = HttpContext.Current.Session["UserRole"].ToString();
+                        rol = int.Parse(rolll);
+                        
+                        if (rol >= 18){
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#"><i class="fas fa-clipboard-check"></i>&nbsp;@Model.PageInfo.PageTitle</a>
+                        </li>
+                        }}
+						
+                        
 					</ul>
 				</div>
 				<div id="contenter" class="card-body">
 					@if (!Model.isPartialView)
 					{
 						<div class="col-md-8">
-							<form method="get" action="@Url.MyResults()">
+							<form method="get" action="@Url.MySResults()">
 								<div class="input-group mb-3">
-									<input name="search" class="form-control" placeholder="Enter Quiz Name" value="@Model.searchTerm" required>
+									<input name="search" class="form-control" placeholder="Enter Survey Name" value="@Model.searchTerm" required>
 									<button type="submit" class="form-control btn btn-primary waves-effect waves-light w-md"><i class="fas fa-search mg-r-10"></i>&nbsp;Search</button>
 									<a href="@Url.MyResults(false, null, 1, Model.pageSize)" role="button" class="form-control btn btn-primary waves-effect waves-light w-md hide-phone"><i class="fas fa-redo-alt mg-r-10"></i>&nbsp;Reset</a>
 								</div>
@@ -35,7 +45,7 @@
 						</div>
 					}
 
-					@Html.Partial("MyResultsPartial", Model)
+					@Html.Partial("MySResultsPartial", Model)
 				</div>
 			</div>
 		</div>

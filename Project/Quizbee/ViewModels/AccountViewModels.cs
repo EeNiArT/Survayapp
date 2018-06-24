@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Quizbee.ViewModels
@@ -82,7 +83,14 @@ namespace Quizbee.ViewModels
 		[Display(Name = "Confirm password")]
 		[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
 		public string ConfirmPassword { get; set; }
-	}
+
+        [Required]
+        [Display(Name = "Date Of Birth")]
+        public DateTime DateOfBirth { get; set; }
+
+        [Display(Name = "Gender")]
+        public string Gender { get; set; }
+    }
 
 	public class ResetPasswordViewModel
 	{

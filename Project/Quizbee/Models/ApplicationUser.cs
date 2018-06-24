@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 
 namespace Quizbee.Models
 {
@@ -18,5 +19,7 @@ namespace Quizbee.Models
 		}
 
 		public string Photo { get; set; }
-	}
+        public String Gender { get; set; }
+        public DateTime DateOfBirth { get; set; }
+    }
 }

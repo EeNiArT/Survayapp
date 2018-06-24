@@ -1,45 +1,210 @@
 ﻿<style>
+   
 
+.labely {
+  width: 320px;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4
+}
 
-    ul {
-        list-style: none;
-    }
+/* hide input */
+input.radio:empty {
+	margin-left: -999px;
+}
 
-    li {
-        display: inline-block;
-        margin-right: 15px;
-    }
+/* style label */
+input.radio:empty ~ label {
+	position: relative;
+	float: left;
+	line-height: 2.5em;
+	text-indent: 3.25em;
+	margin-top: 2em;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
+input.radio:empty ~ label:before {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 2.5em;
+	background: #D1D3D4;
+	border-radius: 3px 0 0 3px;
+}
 
+/* toggle hover */
+input.radio:hover:not(:checked) ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #C2C2C2;
+}
 
-    label {
-        cursor: pointer;
-    }
+input.radio:hover:not(:checked) ~ label {
+	color: #888;
+}
 
-    input:checked + label {
-        background: DarkOliveGreen;
-    }
+/* toggle on */
+input.radio:checked ~ label:before {
+	content:'\2714';
+	text-indent: .9em;
+	color: #9CE2AE;
+	background-color: #4DCB6D;
+}
+
+input.radio:checked ~ label {
+	color: #777;
+    border: 1px solid #4dcb6d;
+    font-weight:700;
+}
+
+/* radio focus */
+input.radio:focus ~ label:before {
+	box-shadow: 0 0 0 3px #999;
+}
 </style>
 
-<div class="form-group">
-    <label for="Title"><solid> Answer Type</solid></label>
-    <ul>
-        <li>
+@if (Model.TypeOfQuestion == "mc")
+{
+    <div>
+        <input type="radio" value="mc" name="qtyperadio" id="afradiomc" checked class="radio" />
+        <label class="labely" for="afradiomc">Multiple Choice</label>
+    </div>
 
-            <label for='radio1'><input type='radio' value='1' name='radio' style="visibility: hidden" id='radio1' /><button class="btn btn-info">Smiley Choice</button></label>
+    <div>
+        <input type="radio" value="sc" name="qtyperadio" id="afradiosc" class="radio" />
+        <label class="labely" for="afradiosc">Smiliey Choice</label>
+    </div>
 
-        </li>
-        <li>
-            <label for='radio2'><input type='radio' value='2' name='radio' style="visibility: hidden" id='radio2' /><button class="btn btn-info">Star Rating</button></label>
-        </li>
-        <li>
-            <label for='radio3'><input type='radio' value='3' name='radio' style="visibility: hidden" id='radio3' /><button class="btn btn-info">Open Question</button></label>
-        </li>
-        <li>
-            <label for='radio4'><input type='radio' value='4' name='radio' style="visibility: hidden" id='radio4' />
-            <button class="btn btn-info">Multiple Choice</button></label>
-        </li>
-    </ul>
+    <div>
+        <input type="radio" value="lc" name="qtyperadio" id="afradiolc" class="radio" />
+        <label class="labely" for="afradiolc">Like Scale</label>
+    </div>
 
-</div>
+    <div>
+        <input type="radio" value="oc" name="qtyperadio" id="afradiooc" class="radio" />
+        <label class="labely" for="afradiooc">Custom open answers</label>
+    </div>
+}
+else if (Model.TypeOfQuestion == "oc")
+{
+    <div>
+        <input type="radio" value="mc" name="qtyperadio" id="afradiomc" class="radio" />
+        <label class="labely" for="afradiomc">Multiple Choice</label>
+    </div>
 
+    <div>
+        <input type="radio" value="sc" name="qtyperadio" id="afradiosc" class="radio" />
+        <label class="labely" for="afradiosc">Smiliey Choice</label>
+    </div>
+
+    <div>
+        <input type="radio" value="lc" name="qtyperadio" id="afradiolc" class="radio" />
+        <label class="labely" for="afradiolc">Like Scale</label>
+    </div>
+
+    <div>
+        <input type="radio" value="oc" name="qtyperadio" id="afradiooc" checked class="radio" />
+        <label class="labely" for="afradiooc">Custom open answers</label>
+    </div>
+}
+else if (Model.TypeOfQuestion == "lc")
+{
+    <div>
+        <input type="radio" value="mc" name="qtyperadio" id="afradiomc" class="radio" />
+        <label class="labely" for="afradiomc">Multiple Choice</label>
+    </div>
+
+    <div>
+        <input type="radio" value="sc" name="qtyperadio" id="afradiosc" class="radio" />
+        <label class="labely" for="afradiosc">Smiliey Choice</label>
+    </div>
+
+    <div>
+        <input type="radio" value="lc" name="qtyperadio" id="afradiolc" checked class="radio" />
+        <label class="labely" for="afradiolc">Like Scale</label>
+    </div>
+
+    <div>
+        <input type="radio" value="oc" name="qtyperadio" id="afradiooc" class="radio" />
+        <label class="labely" for="afradiooc">Custom open answers</label>
+    </div>
+}
+else if (Model.TypeOfQuestion == "sc")
+{
+    <div>
+        <input type="radio" value="mc" name="qtyperadio" id="afradiomc" class="radio" />
+        <label class="labely" for="afradiomc">Multiple Choice</label>
+    </div>
+
+    <div>
+        <input type="radio" value="sc" name="qtyperadio" id="afradiosc" checked class="radio" />
+        <label class="labely" for="afradiosc">Smiliey Choice</label>
+    </div>
+
+    <div>
+        <input type="radio" value="lc" name="qtyperadio" id="afradiolc" class="radio" />
+        <label class="labely" for="afradiolc">Like Scale</label>
+    </div>
+
+    <div>
+        <input type="radio" value="oc" name="qtyperadio" id="afradiooc" class="radio" />
+        <label class="labely" for="afradiooc">Custom open answers</label>
+    </div>
+}
+else
+{
+    <div>
+        <input type="radio" value="mc" name="qtyperadio" id="afradiomc" class="radio" />
+        <label class="labely" for="afradiomc">Multiple Choice</label>
+    </div>
+
+    <div>
+        <input type="radio" value="sc" name="qtyperadio" id="afradiosc" class="radio" />
+        <label class="labely" for="afradiosc">Smiliey Choice</label>
+    </div>
+
+    <div>
+        <input type="radio" value="lc" name="qtyperadio" id="afradiolc" class="radio" />
+        <label class="labely" for="afradiolc">Like Scale</label>
+    </div>
+
+    <div>
+        <input type="radio" value="oc" name="qtyperadio" id="afradiooc" class="radio" />
+        <label class="labely" for="afradiooc">Custom open answers</label>
+    </div>
+}
+
+<script>
+    //debugger;
+    //$("#blocksmilies").css("display", "none");
+    //$("#blockstarratting").css("display", "none");
+    //$("#blockopenanswer").css("display", "none");
+    //$("#blockmultiple choice").css("display", "block");
+    //debugger;
+
+    //var labl = $("input:checked").parent().children()[1];
+    //if (labl != null) {
+    //var lblfor = $(labl)[0].attributes[1].value;
+    
+    //    dfddfdfg(lblfor);
+    //}
+    
+
+    //$(".labely").click(function (e) {
+    //    //alert("Handler for .click() called.");
+        
+    //    dfddfdfg(this.htmlFor);
+
+        
+    //});
+
+    
+    //blocksmilies  blockstarratting  blockopenanswer  blockmultiplechoice  blockanstyperadio
+
+</script>

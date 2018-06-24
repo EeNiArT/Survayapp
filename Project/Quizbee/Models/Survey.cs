@@ -10,6 +10,6 @@ namespace Quizbee.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public TimeSpan TimeDuration { get; set; }
-        public virtual List<Question> Questions { get; set; }
+        public virtual List<SQuestion> SQuestions { get; set; }
     }
 }

@@ -22,6 +22,9 @@
 							<a role="button" class="btn btn-facebook m-t-10" href="http://www.facebook.com/sharer.php?u=@shareableLink" target="_blank">
 								<span class="text-white"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp;Connect With Us</span>
 							</a>
+                            <a role="button" class="btn btn-dark m-t-10" href="@Url.CreateSurvey()" target="_blank">
+                                <span class="text-white"><i class="fas fa-survey"></i>&nbsp;&nbsp;Create New Survey</span>
+                            </a>
 							<a role="button" class="btn btn-twitter m-t-10" href="http://twitter.com/share?text=Attempt%20Quizzes%20here&url=@shareableLink" target="_blank">
 								<span class="text-white"><i class="fab fa-twitter-square"></i>&nbsp;&nbsp;Tweet To Us</span>
 							</a>
@@ -32,6 +35,7 @@
 				@if (Model.Quizzes != null && Model.Quizzes.Count > 0)
 				{
 					<div class="col-md-12 mt-3">
+                        <h4 class="font-500">Quizzes</h4>
 						@for (int i = 1; i <= Model.Quizzes.Count; i++)
 						{
 							i--;
@@ -106,6 +110,84 @@
 							</div>
 						}
 					</div>
+                    <div class="col-md-12 mt-3">
+                        <h4 class="font-500">Surveys</h4>
+                        @for (int i = 1; i <= Model.Surveys.Count; i++)
+                        {
+                            i--;
+
+                            <div class="card-deck mb-4">
+                                @foreach (var quiz in Model.Surveys.Skip(i).Take(3))
+                                {
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <b class="card-title">
+                                                <i class="fas fa-question-circle"></i>&nbsp;@quiz.Name
+                                            </b>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="card-text">
+                                                @if (quiz.Description.Length >= 300)
+                                                {
+                                                    <span>@quiz.Description.Substring(0, 300)...</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>@quiz.Description</span>
+                                                }
+                                            </p>
+                                        </div>
+
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <i class="fas fa-stopwatch"></i>&nbsp;
+                                                Time Allowed :
+                                                @if (quiz.TimeDuration.Hours > 0)
+                                                {
+                                                    if (quiz.TimeDuration.Hours == 1)
+                                                    {
+                                                        <span>@quiz.TimeDuration.Hours.ToString("00") Hour&nbsp;</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@quiz.TimeDuration.Hours.ToString("00") Hours&nbsp;</span>
+                                                    }
+                                                }
+                                                @if (quiz.TimeDuration.Minutes > 0)
+                                                {
+                                                    if (quiz.TimeDuration.Minutes == 1)
+                                                    {
+                                                        <span>@quiz.TimeDuration.Minutes.ToString("00") Minute</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>@quiz.TimeDuration.Minutes.ToString("00") Minutes</span>
+                                                    }
+                                                }
+                                            </li>
+                                            <li class="list-group-item">
+                                                <i class="fas fa-list-ul"></i>&nbsp;
+                                                Total Questions :
+                                                @quiz.SQuestions.Count
+                                            </li>
+                                        </ul>
+                                        <div class="card-footer">
+                                            <b class="text-muted">
+                                                <a href="@Url.AttemptSurvey(quiz.ID)" class="card-link">
+                                                    <i class="fas fa-certificate "></i>&nbsp;
+                                                    Attempt this Survey
+                                                </a>
+                                            </b>
+                                        </div>
+                                    </div>
+                                    i++;
+                                }
+                            </div>
+                        }
+                    </div>
+
+
+
 					<div class="row">
 						<div class="col-sm-12">
 							<hr />
@@ -113,6 +195,9 @@
 								<a href="@Url.QuizzesList()" role="button" class="btn btn-info m-t-10">
 									<i class="fas fa-clipboard-list mg-r-10"></i>&nbsp;See More Quizzes
 								</a>
+                                <a href="@Url.SurveysList()" role="button" class="btn btn-info m-t-10">
+                                    <i class="fas fa-clipboard-list mg-r-10"></i>&nbsp;See More Surveys
+                                </a>
 							</div>
 						</div>
 					</div>

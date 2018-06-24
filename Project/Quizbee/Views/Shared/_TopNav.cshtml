@@ -1,75 +1,111 @@
 ﻿<header id="topnav">
-	<div class="topbar-main">
-		<div class="container-fluid">
-			<div class="logo">
-				<a href="@Url.Home()" class="logo">
-					<span class="logo-small"><i class="fas fa-tasks"></i> Quizbee</span>
-					<span class="logo-large"><i class="fas fa-tasks"></i> Quizbee</span>
-				</a>
-			</div>
-			<div class="navbar-custom">
-				<div id="navigation">
+    +
+    <div class="topbar-main">
+        <div class="container-fluid">
+            <div class="logo">
+                <a href="@Url.Home()" class="logo">
+                    <span class="logo-small"><img src="~/Content/images/favicon.png" style="width:80px; margin-top:-25px" />@*<i class="fas fa-tasks"></i>*@ Qwandryx</span>
+                    <span class="logo-large"><img src="~/Content/images/favicon.png" style="width:80px; margin-top:-25px" />@*<i class="fas fa-tasks"></i>*@ Qwandryx</span>
+                </a>
+            </div>
+            <div class="navbar-custom">
+                <div id="navigation">
                     <ul class="navigation-menu">
-                        <li>
-                            <a href="@Url.Home()">
-                                <span><i class="fas fa-home"></i></span>&nbsp;<span>Home</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Survey()">
-                                <span><i class="fas fa-survey"></i></span>&nbsp;<span>Survey</span>
-                            </a>
-                        </li>
-                                    <li class="has-submenu">
-                                        <a href="@Url.QuizzesList()">
-                                            <span><i class="fas fa-clipboard-list"></i></span>&nbsp;<span>Quizzes</span>
-                                        </a>
-                                        <ul class="submenu">
-                                            <li>
-                                                <a href="@Url.CreateQuiz()">
-                                                    <i class="fa fa-plus"></i>&nbsp;&nbsp;Create New Quiz
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    @if (User.Identity.IsAuthenticated)
-                                    {
+                        @if (User.Identity.IsAuthenticated)
+
+                        {
+                            int role = 0;
+                            if (HttpContext.Current.Session["UserRole"] != null)
+                            {
+                                var rolll = HttpContext.Current.Session["UserRole"].ToString();
+                                role = int.Parse(rolll);
+                            }
+                            if (role >= 16)
+                            {
+                            <li>
+                                <a href="@Url.Home()">
+                                    <span><i class="fas fa-home"></i></span>&nbsp;<span>Home</span>
+                                </a>
+                            </li>
+                            }
+
+
+                            if (role >= 18)
+                            {
+                                <li class="has-submenu">
+                                    <a href="@Url.SurveysList()">
+                                        <span><i class="fas fa-survey"></i></span>&nbsp;<span>Survey</span>
+                                    </a>
+                                    <ul class="submenu">
                                         <li>
-                                            <a href="@Url.MyResults()">
-                                                <span><i class="fas fa-clipboard-check"></i></span>&nbsp;<span>My Results</span>
+                                            <a href="@Url.CreateSurvey()">
+                                                <i class="fa fa-plus"></i>&nbsp;&nbsp;Create New Survey
                                             </a>
                                         </li>
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="menu-extras topbar-custom">
-                            <ul class="list-unstyled topbar-right-menu float-right mb-0">
-                                <li class="menu-item">
-                                    <a class="navbar-toggle nav-link">
-                                        <div class="lines">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
+                                    </ul>
+                                </li>
+                            }
+                            if (role >= 16)
+                            {
+                                <li class="has-submenu">
+                                    <a href="@Url.QuizzesList()">
+                                        <span><i class="fas fa-clipboard-list"></i></span>&nbsp;<span>Quizzes</span>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="@Url.CreateQuiz()">
+                                                <i class="fa fa-plus"></i>&nbsp;&nbsp;Create New Quiz
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+
+
+                                <li>
+                                    <a href="@Url.MyResults()">
+                                        <span><i class="fas fa-clipboard-check"></i></span>&nbsp;<span>My Results</span>
                                     </a>
                                 </li>
-                                @Html.Partial("UserMenuPartial")
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-</div>
-	</div>
+                            }
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="@Url.Home()">
+                                    <span><i class="fas fa-home"></i></span>&nbsp;<span>Home</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="menu-extras topbar-custom">
+                <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                    <li class="menu-item">
+                        <a class="navbar-toggle nav-link">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </li>
+                    @Html.Partial("UserMenuPartial")
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
 </header>
-
 <form method="post" action="@Url.Logout()" id="logOutForm" style="display:none">
-	@Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
 </form>
-
 <script>
-	$(document).ready(function () {
-		$("#logout").click(function () {
-			$("#logOutForm").submit();
-		});
-	});
+    $(document).ready(function () {
+        $("#logout").click(function () {
+            $("#logOutForm").submit();
+        });
+    });
 </script>

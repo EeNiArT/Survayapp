@@ -18,11 +18,11 @@
                 </div>
                 <div class="card-body">
                     <div class="col-md-8">
-                        <form method="get" action="@Url.QuizzesList()">
+                        <form method="get" action="@Url.SurveysList()">
                             <div class="input-group mb-3">
-                                <input name="search" class="form-control" placeholder="Enter Quiz Name" value="@Model.searchTerm" required>
+                                <input name="search" class="form-control" placeholder="Enter Survey Name" value="@Model.searchTerm" required>
                                 <button type="submit" class="form-control btn btn-primary waves-effect waves-light w-md"><i class="fas fa-search mg-r-10"></i>&nbsp;Search</button>
-                                <a href="@Url.QuizzesList(null, 1, Model.pageSize)" role="button" class="form-control btn btn-primary waves-effect waves-light w-md hide-phone"><i class="fas fa-redo-alt mg-r-10"></i>&nbsp;Reset</a>
+                                <a href="@Url.SurveysList(null, 1, Model.pageSize)" role="button" class="form-control btn btn-primary waves-effect waves-light w-md hide-phone"><i class="fas fa-redo-alt mg-r-10"></i>&nbsp;Reset</a>
                             </div>
                             <input type="hidden" name="page" value="1" />
                             <input type="hidden" name="items" value="@Model.pageSize" />
@@ -70,16 +70,16 @@
                                                 }
                                             </td>
                                             <td class="align-middle text-center wrap-td hide-phone">
-                                                @quiz.Questions.Where(q => q.IsActive).ToList().Count
+                                                @quiz.SQuestions.Where(q => q.IsActive).ToList().Count
                                             </td>
                                             <td class="align-middle wrap-td">
                                                 <div class="input-group">
-                                                    <a href="@Url.ModifySurvey(quiz.ID)" role="button" class="btn btn-primary btn-sm"><i class="fas fa-edit mg-r-10"></i>&nbsp;Modify Quiz</a>
-                                                    <a href="@Url.QuestionsList(quiz.ID)" role="button" class="btn btn-info btn-sm hide-phone"><i class="fas fa-list-ul mg-r-10"></i>&nbsp;Questions List</a>
-                                                    <a href="@Url.AddQuestion(quiz.ID)" role="button" class="btn btn-success btn-sm hide-phone"><i class="fas fa-plus mg-r-10"></i>&nbsp;Add Questions</a>
-                                                    @if (quiz.Questions.Count > 0)
+                                                    <a href="@Url.ModifySurvey(quiz.ID)" role="button" class="btn btn-primary btn-sm"><i class="fas fa-edit mg-r-10"></i>&nbsp;Modify Survey</a>
+                                                    <a href="@Url.SQuestionsList(quiz.ID)" role="button" class="btn btn-info btn-sm hide-phone"><i class="fas fa-list-ul mg-r-10"></i>&nbsp;Questions List</a>
+                                                    <a href="@Url.AddSQuestion(quiz.ID)" role="button" class="btn btn-success btn-sm hide-phone"><i class="fas fa-plus mg-r-10"></i>&nbsp;Add Questions</a>
+                                                    @if (quiz.SQuestions.Count > 0)
                                                     {
-                                                        <a href="@Url.AttemptQuiz(quiz.ID)" role="button" class="btn btn-info btn-sm hide-phone"><i class="fas fa-certificate mg-r-10"></i>&nbsp;Attempt Quiz</a>
+                                                        <a href="@Url.AttemptSurvey(quiz.ID)" role="button" class="btn btn-info btn-sm hide-phone"><i class="fas fa-certificate mg-r-10"></i>&nbsp;Attempt Survey</a>
                                                     }
                                                 </div>
                                             </td>
@@ -96,13 +96,13 @@
                                         @if (Model.Pager.CurrentPage > 1)
                                         {
                                             <li class="page-item">
-                                                <a class="page-link" href="@Url.QuizzesList(Model.searchTerm, 1, Model.pageSize)" aria-label="First">
+                                                <a class="page-link" href="@Url.SurveysList(Model.searchTerm, 1, Model.pageSize)" aria-label="First">
                                                     <span aria-hidden="true"><i class="fa fa-angle-double-left"></i></span>
                                                     <span class="sr-only">First</span>
                                                 </a>
                                             </li>
                                             <li class="page-item">
-                                                <a class="page-link" href="@Url.QuizzesList(Model.searchTerm, Model.Pager.CurrentPage - 1, Model.pageSize)" aria-label="Previous">
+                                                <a class="page-link" href="@Url.SurveysList(Model.searchTerm, Model.Pager.CurrentPage - 1, Model.pageSize)" aria-label="Previous">
                                                     <span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
                                                     <span class="sr-only">Previous</span>
                                                 </a>
@@ -111,19 +111,19 @@
                                         @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
                                         {
                                             <li class="page-item @(page == Model.Pager.CurrentPage ? "active" : "")">
-                                                <a class="page-link" href="@Url.QuizzesList(Model.searchTerm, page, Model.pageSize)">@page</a>
+                                                <a class="page-link" href="@Url.SurveysList(Model.searchTerm, page, Model.pageSize)">@page</a>
                                             </li>
                                         }
                                         @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
                                         {
                                             <li class="page-item">
-                                                <a class="page-link" href="@Url.QuizzesList(Model.searchTerm, Model.Pager.CurrentPage + 1, Model.pageSize)" aria-label="Next">
+                                                <a class="page-link" href="@Url.SurveysList(Model.searchTerm, Model.Pager.CurrentPage + 1, Model.pageSize)" aria-label="Next">
                                                     <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
                                                     <span class="sr-only">Next</span>
                                                 </a>
                                             </li>
                                             <li class="page-item">
-                                                <a class="page-link" href="@Url.QuizzesList(Model.searchTerm, Model.Pager.TotalPages, Model.pageSize)" aria-label="Last">
+                                                <a class="page-link" href="@Url.SurveysList(Model.searchTerm, Model.Pager.TotalPages, Model.pageSize)" aria-label="Last">
                                                     <span aria-hidden="true"><i class="fa fa-angle-double-right"></i></span>
                                                     <span class="sr-only">Last</span>
                                                 </a>

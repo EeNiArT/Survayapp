@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = Model.PageInfo.PageTitle;
 
-    var formAction = Model.ID > 0 ? Url.UpdateQuiz(Model.ID) : Url.CreateQuiz();
+    var formAction = Model.ID > 0 ? Url.UpdateSurvey(Model.ID) : Url.CreateSurvey();
 
     var createQuizActive = Model.ID > 0 ? string.Empty : "active";
 }
@@ -13,7 +13,7 @@
                 <div class="card-header">
                     <ul class="nav nav nav-tabs card-header-tabs">
                         <li class="nav-item">
-                            <a class="nav-link" href="@Url.QuizzesList()"><i class="fas fa-clipboard-list"></i>&nbsp;Quizzes</a>
+                            <a class="nav-link" href="@Url.SurveysList()"><i class="fas fa-clipboard-list"></i>&nbsp;Surveys</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">
@@ -37,8 +37,8 @@
                             <input type="hidden" id="ID" name="ID" value="@Model.ID" />
                         }
                         <div class="form-group">
-                            <label for="Title">Quiz Name</label>
-                            <input class="form-control" type="text" id="Name" name="Name" value="@Model.Name" placeholder="Enter quiz name">
+                            <label for="Title">Survey Name</label>
+                            <input class="form-control" type="text" id="Name" name="Name" value="@Model.Name" placeholder="Enter survey name">
                             @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Name"] != null && ViewData.ModelState["Name"].Errors.Count > 0)
                             {
                                 <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Description">Description</label>
-                            <textarea class="form-control" name="Description" placeholder="Enter some Description about this quiz" rows="4">@Model.Description</textarea>
+                            <textarea class="form-control" name="Description" placeholder="Enter some Description about this survey" rows="4">@Model.Description</textarea>
                             @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Description"] != null && ViewData.ModelState["Description"].Errors.Count > 0)
                             {
                                 <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
@@ -95,19 +95,19 @@
                         <hr />
                         @if (Model.ID > 0)
                         {
-                            <button type="submit" id="updateButton" class="btn btn-warning waves-effect waves-light w-md"><i class="fas fa-save mg-r-10"></i>&nbsp;Update this Quiz</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash-alt mg-r-10"></i>&nbsp;Delete this Quiz</button>
-                            <a href="@Url.QuestionsList(Model.ID)" role="button" class="btn btn-info waves-effect waves-light w-md"><i class="fas fa-list-ul mg-r-10"></i>&nbsp;Questions from this Quiz</a>
-                            if (Model.Questions.Count > 0)
+                            <button type="submit" id="updateButton" class="btn btn-warning waves-effect waves-light w-md"><i class="fas fa-save mg-r-10"></i>&nbsp;Update this Survey</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash-alt mg-r-10"></i>&nbsp;Delete this Survey</button>
+                            <a href="@Url.QuestionsList(Model.ID)" role="button" class="btn btn-info waves-effect waves-light w-md"><i class="fas fa-list-ul mg-r-10"></i>&nbsp;Questions from this Survey</a>
+                            if (Model.SQuestions.Count > 0)
                             {
-                                <a href="@Url.AttemptQuiz(Model.ID)" role="button" class="btn btn-primary waves-effect waves-light w-md"><i class="fas fa-certificate mg-r-10"></i>&nbsp;Attempt this Quiz</a>
+                                <a href="@Url.AttemptQuiz(Model.ID)" role="button" class="btn btn-primary waves-effect waves-light w-md"><i class="fas fa-certificate mg-r-10"></i>&nbsp;Attempt this Survey</a>
                             }
                         }
                         else
                         {
-                            <button type="submit" id="addButton" class="btn btn-success waves-effect waves-light w-md"><i class="fas fa-save mg-r-10"></i>&nbsp;Save Quiz and Start Adding Questions</button>
+                            <button type="submit" id="addButton" class="btn btn-success waves-effect waves-light w-md"><i class="fas fa-save mg-r-10"></i>&nbsp;Save Survey and Start Adding Questions</button>
                         }
-                        <a href="@Url.QuizzesList()" role="button" class="btn btn-primary waves-effect waves-light w-md"><i class="fas fa-times mg-r-10"></i>&nbsp;Cancel and Go Back</a>
+                        <a href="@Url.SurveysList()" role="button" class="btn btn-primary waves-effect waves-light w-md"><i class="fas fa-times mg-r-10"></i>&nbsp;Cancel and Go Back</a>
                     </form>
                 </div>
             </div>
@@ -133,11 +133,11 @@
 <script>
 	$(document).ready(function () {
 		$("#updateButton").click(function () {
-			$("#operationForm").attr("action", "@Url.UpdateQuiz(Model.ID)");
+			$("#operationForm").attr("action", "@Url.UpdateSurvey(Model.ID)");
 			$("#operationForm").submit();
 		});
 		$("#deleteButton").click(function () {
-			$("#operationForm").attr("action", "@Url.DeleteQuiz(Model.ID)");
+			$("#operationForm").attr("action", "@Url.DeleteSurvey(Model.ID)");
 			$("#operationForm").submit();
 		});
 	});

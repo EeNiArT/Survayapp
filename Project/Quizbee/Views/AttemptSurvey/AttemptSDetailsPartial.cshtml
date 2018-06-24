@@ -1,0 +1,218 @@
+﻿@model Quizbee.ViewModels.StudentSurveyViewModel
+
+@if (Model != null && Model.StudentSurvey != null)
+{
+	var ResultTitle = Model.TimerExpired ? "Quiz Time's Up" : "Quiz Attempt Results";
+		
+<div class="col-md-12">
+	<div class="card-deck mb-4">
+		<div class="card">
+			<div class="card-header">
+				<b class="card-title">
+					<i class="fas fa-user"></i>&nbsp;Attempted By:					
+				</b>
+			</div>
+			<div class="card-body">
+				<p class="card-text">
+					@if (Model.StudentSurvey.Student != null)
+					{
+						<h4>@Model.StudentSurvey.Student.UserName</h4>
+					}
+					else
+					{
+						<h4>Anonymous</h4>
+					}
+				</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">
+					<i class="fas fa-hourglass-start"></i>&nbsp;
+					Start Time :
+					@Model.StudentSurvey.StartedAt.IfNullShowAlternative("-")
+				</li>
+				<li class="list-group-item">
+					@if (Model.StudentSurvey.CompletedAt == null)
+					{
+						<i class="fas fa-hourglass"></i>
+					}
+					else
+					{
+						<i class="fas fa-hourglass-end"></i>
+					}
+					&nbsp; Completed Time :
+					@Model.StudentSurvey.CompletedAt.IfNullShowAlternative("Abandoned")
+				</li>
+				<li class="list-group-item">
+					<i class="fas fa-flag-checkered"></i>&nbsp;
+					Score :
+					@Model.StudentSurvey.AttemptedSQuestions.Where(q => q.IsCorrect).ToList().Count
+					<span>/</span>
+					@Model.StudentSurvey.Survey.SQuestions.ToList().Count
+				</li>
+			</ul>
+			<div class="card-footer">
+				<b class="text-muted">
+					<a href="@Url.AttemptSurvey(Model.StudentSurvey.Survey.ID)" class="card-link">
+						<i class="fas fa-certificate"></i>&nbsp;
+						Attempt Survey Again
+					</a>
+				</b>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-header">
+				<b class="card-title">
+					<i class="fas fa-question-circle"></i>&nbsp;Survey: 
+				</b>
+			</div>
+			<div class="card-body">
+				<p class="card-text">
+					<h4>@Model.StudentSurvey.Survey.Name</h4>
+					<span>
+						<br />
+						@Model.StudentSurvey.Survey.Description
+					</span>
+				</p>
+			</div>
+			<div class="card-footer">
+				<b class="text-muted">
+					<i class="fas fa-stopwatch"></i>&nbsp;
+					Time Allowed :
+					@if (Model.StudentSurvey.Survey.TimeDuration.Hours > 0)
+					{
+						if (Model.StudentSurvey.Survey.TimeDuration.Hours == 1)
+						{
+							<span>@Model.StudentSurvey.Survey.TimeDuration.Hours.ToString("00") Hour&nbsp;</span>
+						}
+						else
+						{
+							<span>@Model.StudentSurvey.Survey.TimeDuration.Hours.ToString("00") Hours&nbsp;</span>
+						}
+					}
+					@if (Model.StudentSurvey.Survey.TimeDuration.Minutes > 0)
+					{
+						if (Model.StudentSurvey.Survey.TimeDuration.Minutes == 1)
+						{
+							<span>@Model.StudentSurvey.Survey.TimeDuration.Minutes.ToString("00") Minute</span>
+						}
+						else
+						{
+							<span>@Model.StudentSurvey.Survey.TimeDuration.Minutes.ToString("00") Minutes</span>
+						}
+					}
+				</b>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="col-sm-12">
+	<div class="card-box widget-inline">
+		<div class="row">
+			<div class="col-lg-3 col-sm-6">
+				<div class="widget-inline-box text-center">
+					<h3><i class="text-primary fa fa-clipboard"></i></h3>
+					<h2>@Model.StudentSurvey.Survey.SQuestions.Count()</h2>
+					<p class="text-muted">Total Questions</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-sm-6">
+				<div class="widget-inline-box text-center">
+					<h3><i class="text-info fas fa-clipboard-list"></i></h3>
+					<h2>@Model.StudentSurvey.AttemptedSQuestions.Count()</h2>
+					<p class="text-muted">Attempted Questions</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-sm-6">
+				<div class="widget-inline-box text-center">
+					<h3><i class="text-success fas fa-clipboard-check"></i></h3>
+					<h2>@Model.StudentSurvey.AttemptedSQuestions.Where(a => a.IsCorrect).Count()</h2>
+					<p class="text-muted">Correct Answers</p>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-sm-6">
+				<div class="widget-inline-box text-center b-0">
+					<h3><i class="text-danger fas fa-clock"></i></h3>
+					<h2>
+						@Model.Hours.ToString("00"):@Model.Minutes.ToString("00"):@Model.Seconds.ToString("00")
+					</h2>
+					<p class="text-muted">Time Taken</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="col-md-12 table-responsive">
+	<table class="table table-striped table-bordered m-b-0">
+		<thead>
+			<tr>
+				<th>Questions</th>
+				<th>Results</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var attemptedQuestion in Model.StudentSurvey.AttemptedSQuestions)
+			{
+				<tr>
+					<td class="align-middle">@attemptedQuestion.SQuestion.Title</td>
+					<td class="align-middle wrap-td">
+						@if (attemptedQuestion.IsCorrect)
+						{
+							<div class="m-t-10 alert alert-icon alert-success" role="alert">
+								<i class="mdi mdi-check-circle-outline"></i>
+								Right Answer : @attemptedQuestion.SQuestion.Options.FirstOrDefault(o=>o.IsCorrect).Answer
+							</div>
+						}
+						else
+						{
+							<div class="m-t-10 alert alert-icon alert-danger" role="alert">
+								<i class="mdi mdi-close-circle-outline"></i>
+								Your Answer : @attemptedQuestion.SelectedOption.Answer
+							</div>
+							<div class="m-t-10 alert alert-icon alert-success" role="alert">
+								<i class="mdi mdi-check-circle-outline"></i>
+								Correct Option : @attemptedQuestion.SQuestion.Options.FirstOrDefault(o => o.IsCorrect).Answer
+							</div>
+						}
+
+						<span class="badge badge-custom">Answer Timestamp : @attemptedQuestion.AnsweredAt</span>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
+
+	var quizResultShareLink = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.AttemptSDetails(Model.StudentSurvey.ID));
+
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-6">
+				<a role="button" class="btn btn-lg btn-facebook btn-block waves-effect waves-light w-md" href="http://www.facebook.com/sharer.php?u=@quizResultShareLink" target="_blank">
+					<span class="text-white"><i class="fab fa-facebook-square"></i>&nbsp;&nbsp;Share Quiz Results on Facebook</span>
+				</a>
+			</div>
+			<div class="col-md-6">
+				<a role="button" class="btn btn-lg btn-twitter btn-block waves-effect waves-light w-md" href="http://twitter.com/share?text=My%20Quiz%20Result&url=@quizResultShareLink" target="_blank">
+					<span class="text-white"><i class="fab fa-twitter-square"></i>&nbsp;&nbsp;Share Quiz Results on Twitter</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+<script>
+	$(document).ready()
+	{
+		if (quizTimer != undefined)
+		{
+			clearInterval(quizTimer);
+		}
+	}
+</script>
+
+}

@@ -1,13 +1,17 @@
-﻿<style>
-    .shadow-textarea textarea.form-control {
-        padding-left: 0.8rem;
-    }
-</style>
+﻿@*@Html.TextArea("myTextArea", "This is value", new { @class = "form-control" })
+
+@Html.TextArea("myTextArea2", "This is value", new { @class = "form-control" })*@
+
+<textarea class="form-control"
+          id="Description"
+          name="Description"
+          rows="2"
+          placeholder="Write your answer here"
+          cols="20">
+    
+</textarea>
 
 
-    <div class="form-group shadow-textarea">
-        <label for="TextAria">Give Your Answer:</label>
-        <textarea class="form-control z-depth-1" id="textaria" rows="4" col="50" placeholder="Write something here..."></textarea>
-    <br />
-        <button type="submit" id="textaria" class="btn btn-info" style="border-radius:12px">Submit</button>
-    </div>
+<script>
+
+</script>
