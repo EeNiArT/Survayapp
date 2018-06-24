@@ -91,7 +91,19 @@ namespace Quizbee
 				defaults: new { controller = "Question", action = "QuestionOperation" }
 			);
 
-			routes.MapRoute(
+            routes.MapRoute(
+                name: "SQuestionsList",
+                url: "squestions/{SurveyID}/",
+                defaults: new { controller = "SQuestion", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "SQuestionOperation",
+                url: "squestions/{SurveyID}/{Operation}/",
+                defaults: new { controller = "SQuestion", action = "SQuestionOperation" }
+            );
+
+            routes.MapRoute(
 				name: "AttemptQuiz",
 				url: "attempt-quiz/{QuizID}",
 				defaults: new { controller = "AttemptQuiz", action = "Attempt" }
@@ -102,35 +114,59 @@ namespace Quizbee
 				url: "answer-question",
 				defaults: new { controller = "AttemptQuiz", action = "AnswerQuestion" }
 			);
-			
-			routes.MapRoute(
+
+            routes.MapRoute(
+                name: "AttemptSurvey",
+                url: "attempt-survey/{SurveyID}",
+                defaults: new { controller = "AttemptSurvey", action = "Attempt" }
+            );
+
+            routes.MapRoute(
+                name: "AnswerSQuestion",
+                url: "answer-squestion",
+                defaults: new { controller = "AttemptSurvey", action = "AnswerSQuestion" }
+            );
+
+            routes.MapRoute(
 				name: "AttemptDetails",
 				url: "quiz-result/{attemptID}",
 				defaults: new { controller = "AttemptQuiz", action = "AttemptDetails" }
-			);
-			
-			routes.MapRoute(
+			); 
+
+                routes.MapRoute(
+                name: "AttemptSDetails",
+                url: "survey-result/{attemptID}",
+                defaults: new { controller = "AttemptSurvey", action = "AttemptSDetails" }
+            );
+
+            routes.MapRoute(
 				name: "MyResults",
 				url: "me/results",
 				defaults: new { controller = "AttemptQuiz", action = "MyResults" }
-			);
+			); 
+                routes.MapRoute(
+                name: "MySResults",
+                url: "me/sresults",
+                defaults: new { controller = "AttemptSurvey", action = "MyResults" }
+            );
 
-			routes.MapRoute(
-				name: "Default",
-				url: "{controller}/{action}/{id}/",
-				defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-			);
 
-			routes.MapRoute(
-				name: "Survey",
-				url: "survey/",
+            routes.MapRoute(
+				name: "Surveys",
+				url: "Survey/",
 				defaults: new { controller = "Survey", action = "Index" }
 			);
 			routes.MapRoute(
 				name: "SurveyOperation",
-				url: "surveys/{Operation}/",
+				url: "Survey/{Operation}/",
 				defaults: new { controller = "Survey", action = "SurveyOperation" }
 			);
-		}
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}/",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+        }
 	}
 }
