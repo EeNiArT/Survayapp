@@ -190,11 +190,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Commons\Extensions.cs" />
+    <Compile Include="Commons\Utility.cs" />
     <Compile Include="Commons\Variables.cs" />
     <Compile Include="Controllers\AttemptQuizController.cs" />
+    <Compile Include="Controllers\AttemptSurveyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\QuizController.cs" />
+    <Compile Include="Controllers\SQuestionController.cs" />
+    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Database\ApplicationDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -245,18 +249,35 @@
     <Compile Include="Migrations\201803201153246_isActivecheck.Designer.cs">
       <DependentUpon>201803201153246_isActivecheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805242047412_survey.cs" />
+    <Compile Include="Migrations\201805242047412_survey.Designer.cs">
+      <DependentUpon>201805242047412_survey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806220639488_Surveyembeding.cs" />
+    <Compile Include="Migrations\201806220639488_Surveyembeding.Designer.cs">
+      <DependentUpon>201806220639488_Surveyembeding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806221522301_22june.cs" />
+    <Compile Include="Migrations\201806221522301_22june.Designer.cs">
+      <DependentUpon>201806221522301_22june.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\AttemptedQuestion.cs" />
+    <Compile Include="Models\AttemptedSQuestion.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Quiz.cs" />
+    <Compile Include="Models\SQuestion.cs" />
     <Compile Include="Models\StudentQuiz.cs" />
+    <Compile Include="Models\StudentSurvey.cs" />
+    <Compile Include="Models\Survey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="ViewModels\AttemptQuizViewModels.cs" />
+    <Compile Include="ViewModels\AttemptSurveyViewModels.cs" />
     <Compile Include="ViewModels\HomeViewModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="ViewModels\PageViewModels.cs" />
@@ -264,6 +285,9 @@
     <Compile Include="ViewModels\QuizViewModels.cs" />
     <Compile Include="ViewModels\SharedViewModels.cs" />
     <Compile Include="ViewModels\StudentQuizzesViewModels.cs" />
+    <Compile Include="ViewModels\StudentSurveysViewModels.cs" />
+    <Compile Include="ViewModels\SurveyViewModels.cs" />
+    <Compile Include="ViewModels\WelcomeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="500.aspx" />
@@ -296,6 +320,7 @@
     <Content Include="Content\js\jquery.slimscroll.js" />
     <Content Include="Content\js\modernizr.min.js" />
     <Content Include="Content\js\popper.min.js" />
+    <Content Include="Content\js\Smily\emotion-ratings.js" />
     <Content Include="Content\pages\jquery.dashboard.js" />
     <Content Include="Content\pages\jquery.datatables.init.js" />
     <Content Include="Content\pages\jquery.flot.init.js" />
@@ -697,6 +722,24 @@
     <Content Include="Views\AttemptQuiz\MyResults.cshtml" />
     <Content Include="Views\AttemptQuiz\MyResultsPartial.cshtml" />
     <Content Include="Views\Shared\UserMenuPartial.cshtml" />
+    <Content Include="Views\Partials\Smileys.cshtml" />
+    <Content Include="Views\Partials\Starsratting.cshtml" />
+    <Content Include="Views\Survey\Index.cshtml" />
+    <Content Include="Views\Survey\SurveyOperation.cshtml" />
+    <Content Include="Views\User\Welcome.cshtml" />
+    <Content Include="Views\SQuestion\Index.cshtml" />
+    <Content Include="Views\SQuestion\SQuestionOperation.cshtml" />
+    <Content Include="Views\Partials\TextBox.cshtml" />
+    <Content Include="Views\Partials\Radio.cshtml" />
+    <Content Include="Views\AttemptSurvey\Attempt.cshtml" />
+    <Content Include="Views\AttemptSurvey\MyResults.cshtml" />
+    <Content Include="Views\AttemptSurvey\MySResultsPartial.cshtml" />
+    <Content Include="Views\AttemptSurvey\SurveySQuestion.cshtml" />
+    <Content Include="Views\AttemptSurvey\SurveyComplete.cshtml" />
+    <Content Include="Views\AttemptSurvey\AttemptSDetailsPartial.cshtml" />
+    <Content Include="Views\AttemptSurvey\AttemptSDetails.cshtml" />
+    <Content Include="Views\Partials\malefemale.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801261555510_Initialized.resx">
@@ -731,6 +774,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803201153246_isActivecheck.resx">
       <DependentUpon>201803201153246_isActivecheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805242047412_survey.resx">
+      <DependentUpon>201805242047412_survey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806220639488_Surveyembeding.resx">
+      <DependentUpon>201806220639488_Surveyembeding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806221522301_22june.resx">
+      <DependentUpon>201806221522301_22june.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
