@@ -1,4 +1,5 @@
 ﻿using Quizbee.Database;
+using Quizbee.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,9 +28,11 @@ namespace Quizbee.Commons
 
         }
 
-        public static int getageofuser()
+        public static int getageofuser(Survey jhj)
         {
-            
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            //var ds = db.s
 
             return 0;
         }

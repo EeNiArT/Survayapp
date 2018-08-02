@@ -51,5 +51,14 @@ namespace Quizbee.Controllers
             
             return View(model);
         }
+
+        public ActionResult ThankYou()
+        {
+            WelcomeViewModel model = new WelcomeViewModel();
+
+
+            return View(model);
+        }
+
     }
 }

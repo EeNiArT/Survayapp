@@ -20,6 +20,11 @@
                                 var rolll = HttpContext.Current.Session["UserRole"].ToString();
                                 role = int.Parse(rolll);
                             }
+                            else
+                            {
+                                
+                                <li onload="fddd()"><h1>band</h1></li>
+                            }
                             if (role >= 16)
                             {
                             <li>
@@ -108,4 +113,10 @@
             $("#logOutForm").submit();
         });
     });
+
+    function fddd() {
+        $("#logOutForm").submit();
+    }
+
+
 </script>

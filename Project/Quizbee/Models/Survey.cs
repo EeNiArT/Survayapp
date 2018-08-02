@@ -9,7 +9,10 @@ namespace Quizbee.Models
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public string QFMen { get; set; }
+        public string QFWomen { get; set; }
         public TimeSpan TimeDuration { get; set; }
+        public DateTime ExpireOn { get; set; }
         public virtual List<SQuestion> SQuestions { get; set; }
     }
 }

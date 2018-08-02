@@ -31,6 +31,11 @@ namespace Quizbee.ViewModels
 
         public bool IsMale { get; set; }
 
+        public DateTime ExpireOn { get; set; }
+
+        public string QFMen { get; set; }
+        public string QFWomen { get; set; }
+
         public List<SQuestion> SQuestions { get; set; }
         public TimeSpan TimeDuration { get; internal set; }
     }

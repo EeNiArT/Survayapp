@@ -133,11 +133,11 @@ namespace Quizbee.Controllers
         [HttpPost]
         public async Task<ActionResult> SQuestionOperation(string Operation, FormCollection collection)
         {
-            QuestionViewModel model = GetQuestionViewModelFromFormCollection(collection);
+            SQuestionViewModel model = GetQuestionViewModelFromFormCollection(collection);
 
             if (Operation == Operations.Create)
             {
-                var quiz = await db.Surveys.FindAsync(model.QuizID);
+                var quiz = await db.Surveys.FindAsync(model.SurveyID);
 
                 if (quiz == null || !quiz.IsActive) return HttpNotFound();
 
@@ -193,11 +193,11 @@ namespace Quizbee.Controllers
 
                 await CreateQuestionAsync(quiz, model);
 
-                return RedirectToAction("SQuestionOperation", new { Operation = Operations.Create, QuizID = model.QuizID });
+                return RedirectToAction("SQuestionOperation", new { Operation = Operations.Create, QuizID = model.SurveyID });
             }
             else if (Operation == Operations.Update && model.ID > 0)
             {
-                var quiz = await db.Surveys.FindAsync(model.QuizID);
+                var quiz = await db.Surveys.FindAsync(model.SurveyID);
 
                 if (quiz == null || !quiz.IsActive) return HttpNotFound();
 
@@ -261,7 +261,7 @@ namespace Quizbee.Controllers
             }
             else if (Operation == Operations.Delete && model.ID > 0)
             {
-                var quiz = await db.Surveys.FindAsync(model.QuizID);
+                var quiz = await db.Surveys.FindAsync(model.SurveyID);
 
                 if (quiz == null || !quiz.IsActive) return HttpNotFound();
 
@@ -276,7 +276,7 @@ namespace Quizbee.Controllers
             else return HttpNotFound();
         }
 
-        private async Task<SQuestion> CreateQuestionAsync(Survey quiz, QuestionViewModel model)
+        private async Task<SQuestion> CreateQuestionAsync(Survey quiz, SQuestionViewModel model)
         {
             SQuestion question = new SQuestion();
             question.SurveyID = quiz.ID;
@@ -301,7 +301,7 @@ namespace Quizbee.Controllers
             return question;
         }
 
-        private async Task<SQuestion> UpdateQuestionAsync(Survey quiz, QuestionViewModel model, SQuestion question)
+        private async Task<SQuestion> UpdateQuestionAsync(Survey quiz, SQuestionViewModel model, SQuestion question)
         {
             foreach (var option in question.Options.ToList())
             {
@@ -331,7 +331,7 @@ namespace Quizbee.Controllers
             return question;
         }
 
-        private async Task<SQuestion> DeleteQuestionAsync(Survey quiz, QuestionViewModel model, SQuestion question)
+        private async Task<SQuestion> DeleteQuestionAsync(Survey quiz, SQuestionViewModel model, SQuestion question)
         {
             foreach (var attemptedQuestion in db.AttemptedQuestions.Where(at => at.Question.ID == question.ID).ToList())
             {
@@ -351,9 +351,9 @@ namespace Quizbee.Controllers
             return question;
         }
 
-        private QuestionViewModel GetQuestionViewModelFromFormCollection(FormCollection collection)
+        private SQuestionViewModel GetQuestionViewModelFromFormCollection(FormCollection collection)
         {
-            QuestionViewModel model = new QuestionViewModel();
+            SQuestionViewModel model = new SQuestionViewModel();
 
             model.Options = new List<Option>();
 
@@ -363,7 +363,7 @@ namespace Quizbee.Controllers
                 {
                     if (key == "QuizID")
                     {
-                        model.QuizID = int.Parse(collection[key]);
+                        model.SurveyID = int.Parse(collection[key]);
                     }
                     else if (key == "ID")
                     {

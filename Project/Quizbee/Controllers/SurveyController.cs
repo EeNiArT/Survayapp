@@ -131,7 +131,7 @@ namespace Quizbee.Controllers
 
                 Survey quiz = await CreateQuizAsync(model);
 
-                return RedirectToAction("SQuestionOperation", "SQuestion", new { Operation = Operations.Create, QuizID = quiz.ID, });
+                return RedirectToAction("SQuestionOperation", "SQuestion", new { Operation = Operations.Create, SurveyID = quiz.ID, });
             }
             else if (model.Operation == Operations.Update && model.ID > 0)
             {
@@ -186,6 +186,8 @@ namespace Quizbee.Controllers
             quiz.TimeDuration = new TimeSpan(model.Hours, model.Minutes, 0);
             quiz.ModifiedOn = DateTime.Now;
             quiz.IsActive = true;
+            quiz.QFMen = model.QFMen;
+            quiz.QFWomen = model.QFWomen;
 
             db.Surveys.Add(quiz);
             await db.SaveChangesAsync();
@@ -199,6 +201,8 @@ namespace Quizbee.Controllers
             quiz.Description = model.Description;
             quiz.TimeDuration = new TimeSpan(model.Hours, model.Minutes, 0);
             quiz.ModifiedOn = DateTime.Now;
+            quiz.QFMen = model.QFMen;
+            quiz.QFWomen = model.QFWomen;
 
             db.Entry(quiz).State = EntityState.Modified;
             await db.SaveChangesAsync();

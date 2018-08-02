@@ -161,7 +161,8 @@ namespace Quizbee.Controllers
                     studentQuizModel.StudentSurvey = studentQuiz;
                     studentQuizModel.TimerExpired = model.TimerExpired;
 
-                    return PartialView("AttemptSDetailsPartial", studentQuizModel);
+                    //return PartialView("AttemptSDetailsPartial", studentQuizModel);
+                    return RedirectToAction("ThankYou", "HOme");
                 }
             }
         }

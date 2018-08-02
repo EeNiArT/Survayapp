@@ -17,12 +17,13 @@
                     </ul>
                 </div>
                 <div class="card-body">
-                    <div class="col-md-8">
+                    <div class="col-md-8" >
                         <form method="get" action="@Url.SurveysList()">
                             <div class="input-group mb-3">
                                 <input name="search" class="form-control" placeholder="Enter Survey Name" value="@Model.searchTerm" required>
                                 <button type="submit" class="form-control btn btn-primary waves-effect waves-light w-md"><i class="fas fa-search mg-r-10"></i>&nbsp;Search</button>
                                 <a href="@Url.SurveysList(null, 1, Model.pageSize)" role="button" class="form-control btn btn-primary waves-effect waves-light w-md hide-phone"><i class="fas fa-redo-alt mg-r-10"></i>&nbsp;Reset</a>
+                                <input class="form-control" type="text" id="hjkkkkl" style="display:none" />
                             </div>
                             <input type="hidden" name="page" value="1" />
                             <input type="hidden" name="items" value="@Model.pageSize" />
@@ -35,6 +36,8 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th class="text-center">Remaining Male Quota</th>
+                                        <th class="text-center">Remaining Female Quota</th>
                                         <th class="hide-phone">Duration</th>
                                         <th class="text-center hide-phone">Questions</th>
                                         <th>Actions</th>
@@ -45,6 +48,8 @@
                                     {
                                         <tr>
                                             <td class="align-middle">@quiz.Name</td>
+                                            <td class="align-middle text-center wrap-td hide-phone">@Utility.getageofuser(quiz)</td>
+                                            <td class="align-middle text-center wrap-td hide-phone">@quiz.QFWomen</td>
                                             <td class="align-middle text-center wrap-td hide-phone">
                                                 @if (quiz.TimeDuration.Hours > 0)
                                                 {
@@ -80,6 +85,10 @@
                                                     @if (quiz.SQuestions.Count > 0)
                                                     {
                                                         <a href="@Url.AttemptSurvey(quiz.ID)" role="button" class="btn btn-info btn-sm hide-phone"><i class="fas fa-certificate mg-r-10"></i>&nbsp;Attempt Survey</a>
+                                                        
+                                                           
+                                                        
+                                                        <button value="@Url.AttemptSurvey(quiz.ID)" onclick="cotoclk(this)" role="button" class="btn btn-primary btn-sm"><i class="fas fa-edit mg-r-10"></i>&nbsp; Copy link</button>
                                                     }
                                                 </div>
                                             </td>
@@ -152,3 +161,82 @@
         </div>
     </div>
 </div>
+
+
+<script>
+
+
+
+    function cotoclk(e) {
+        debugger;
+
+        var pathname = window.location.pathname; // Returns path only
+        var url = window.location.href;
+
+        var gfd = url.split(pathname)[0]
+
+        $('#hjkkkkl').val("")
+        //var hdfdf = gfd + e.value;
+        $('#hjkkkkl').val(url.split(pathname)[0] + e.value);
+        var fdsd = $('#hjkkkkl').val();
+        var copyText = document.getElementById("hjkkkkl");
+        copyText.select();
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+        //var jhg = copyToClipboard(e);
+      
+    }
+
+    function copyToClipboard(elem) {
+        // create hidden text element, if it doesn't already exist
+        var targetId = "_hiddenCopyText_";
+        var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+        var origSelectionStart, origSelectionEnd;
+        if (isInput) {
+            // can just use the original source element for the selection and copy
+            target = elem;
+            origSelectionStart = elem.selectionStart;
+            origSelectionEnd = elem.selectionEnd;
+        } else {
+            // must use a temporary form element for the selection and copy
+            target = document.getElementById(targetId);
+            if (!target) {
+                var target = document.createElement("textarea");
+                target.style.position = "absolute";
+                target.style.left = "-9999px";
+                target.style.top = "0";
+                target.id = targetId;
+                document.body.appendChild(target);
+            }
+            target.textContent = elem.textContent;
+        }
+        // select the content
+        var currentFocus = document.activeElement;
+        target.focus();
+        target.setSelectionRange(0, target.value.length);
+
+        // copy the selection
+        var succeed;
+        try {
+            succeed = document.execCommand("copy");
+        } catch (e) {
+            succeed = false;
+        }
+        // restore original focus
+        if (currentFocus && typeof currentFocus.focus === "function") {
+            currentFocus.focus();
+        }
+
+        if (isInput) {
+            // restore prior selection
+            elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+        } else {
+            // clear temporary content
+            target.textContent = "";
+        }
+        return succeed;
+    }
+
+
+</script>

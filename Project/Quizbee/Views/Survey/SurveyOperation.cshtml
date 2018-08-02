@@ -92,6 +92,48 @@
                                 </div>
                             }
                         </div>
+                        <div class="form-group">
+                            <label for="Minutes">Male Quota</label>
+                            <input class="form-control" type="text" id="QFMen" name="QFMen" value="@Model.QFMen" placeholder="Enter Male Quota limit">
+                            @if (!ViewData.ModelState.IsValid && ViewData.ModelState["QFMen"] != null && ViewData.ModelState["QFMen"].Errors.Count > 0)
+                            {
+                                <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <i class="mdi mdi-alert"></i>
+                                    @Html.ValidationMessageFor(m => m.QFMen, "", new { @class = "tx-danger" })
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label for="Minutes">Female Quota</label>
+                            <input class="form-control" type="text" id="QFWomen" name="QFWomen" value="@Model.QFWomen" placeholder="Enter Female Quota limit">
+                            @if (!ViewData.ModelState.IsValid && ViewData.ModelState["QFWomen"] != null && ViewData.ModelState["QFWomen"].Errors.Count > 0)
+                            {
+                                <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <i class="mdi mdi-alert"></i>
+                                    @Html.ValidationMessageFor(m => m.QFWomen, "", new { @class = "tx-danger" })
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label for="Minutes">Survey Ends On</label>
+                            <input class="form-control" type="date" id="ExpireOn" name="ExpireOn" value="@Model.ExpireOn" placeholder="Enter Female Quota limit">
+                            @if (!ViewData.ModelState.IsValid && ViewData.ModelState["ExpireOn"] != null && ViewData.ModelState["ExpireOn"].Errors.Count > 0)
+                            {
+                                <div class="m-t-10 alert alert-icon alert-warning alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <i class="mdi mdi-alert"></i>
+                                    @Html.ValidationMessageFor(m => m.QFWomen, "", new { @class = "tx-danger" })
+                                </div>
+                            }
+                        </div>
                         <hr />
                         @if (Model.ID > 0)
                         {
@@ -100,7 +142,7 @@
                             <a href="@Url.QuestionsList(Model.ID)" role="button" class="btn btn-info waves-effect waves-light w-md"><i class="fas fa-list-ul mg-r-10"></i>&nbsp;Questions from this Survey</a>
                             if (Model.SQuestions.Count > 0)
                             {
-                                <a href="@Url.AttemptQuiz(Model.ID)" role="button" class="btn btn-primary waves-effect waves-light w-md"><i class="fas fa-certificate mg-r-10"></i>&nbsp;Attempt this Survey</a>
+                                <a href="@Url.AttemptSurvey(Model.ID)" role="button" class="btn btn-primary waves-effect waves-light w-md"><i class="fas fa-certificate mg-r-10"></i>&nbsp;Attempt this Survey</a>
                             }
                         }
                         else
